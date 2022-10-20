@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- COMMENTO DI PROVA PUSH GITHUB CLAUDIO -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header>
-        <div class="px-3 py-2 text-bg-dark mb-3">
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/"
-                        class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                        <p class="">Logo</p>
-                    </a>
-                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                Customers
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Logo</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                 
+                </ul>
+                <form class="d-flex" role="search">
+                  
+                  <button class="btn btn-outline-success" type="submit">Login</button>
+                </form>
+              </div>
             </div>
-        </div>
+          </nav>
     </header>
     <section id="gallery">
         <div class="container mb-5">
-            <h2 class="text-center mt-2 mb-4"> I più richiesti</h2>
+            <h2 class="text-center mt-2 mb-4"> Smart List</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <div class="col d-flex align-items-stretch">
                     <div class="card">
-                        <img src="assets/portate/calamari-fritti.jpg" class="card-img-top" alt="Fritto di calamari">
-                        <div class="card-body">
-                            <h5 class="card-title">Fritto di calamari</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry.</p>
+                        <!-- Example split danger button -->
+                        <div class="card text-bg-info mb-3">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <tbody>
+                                    <tr class="fw-normal">
+                                      <th>
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                          alt="avatar 1" style="width: 45px; height: auto;">
+                                        <span class="ms-2"></span>
+                                      </th>
+                                      <td class="align-middle">
+                                        <span>Call Sam For payments</span>
+                                      </td>
+                                      <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+                                      </div>
+                                      </td>
+                                    </tr>
+                                </tbody>
+                                   
+                                    
+                                        
+                                          <div class="dropdown">
+                                            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                          </svg>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                              <li><a class="dropdown-item" href="#">Action</a></li>
+                                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                          </div>
+
+                                    
+                            </div>
                         </div>
-                    </div>
+
+                    </div><!-- end card -->
                 </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card">
-                        <img src="assets/portate/lasagna-bolognese.jpg" class="card-img-top"
-                            alt="Lasagne alla bolognese">
-                        <div class="card-body">
-                            <h5 class="card-title">Lasagne alla bolognese</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card">
-                        <img src="assets/portate/focaccia-mortadella.jpg" class="card-img-top"
-                            alt="Focaccia con mortadella">
-                        <div class="card-body">
-                            <h5 class="card-title">Focaccia con mortadella</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card">
-                        <img src="assets/portate/spaghetti-vongole.jpg" class="card-img-top"
-                            alt="Spaghetti alle vongole">
-                        <div class="card-body">
-                            <h5 class="card-title">Spaghetti alle vongole</h5>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div><!-- end row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4-->
         </div>
     </section>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
