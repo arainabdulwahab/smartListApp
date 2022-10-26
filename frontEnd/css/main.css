@@ -6,3 +6,7 @@ body{
       background-color: lightblue;
     }
   }
+
+  #staticBackdrop{
+    background-image: url("../images/");
+  }
