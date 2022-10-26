@@ -15,10 +15,10 @@ function hideShowQuantity(){
     let quantity = document.getElementById('quantitaListaAperta');
 
     if (showQuantity == false){
-      append con show
+    //  append con show
       showQuantity = true;
     } else {
-      riscrivo tutta la classe come di default
+    //  riscrivo tutta la classe come di default
     }
 
 }
