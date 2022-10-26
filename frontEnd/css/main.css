@@ -1,12 +1,14 @@
-body{
-    background-color: black;
-}
+
 @media only screen and (min-width: 990px) {
     body {
       background-color: lightblue;
     }
   }
 
-  #staticBackdrop{
-    background-image: url("../images/");
+#backImg{
+    background-image: url("../images/Wallpaper/Wallpaper_liste/sfondiliste-resized.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
   }
