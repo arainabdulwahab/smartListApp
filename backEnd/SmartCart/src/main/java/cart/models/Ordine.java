@@ -41,6 +41,12 @@ public class Ordine implements Serializable {
 	@Column(name="data")
 	private Date data;
 	
+	@Column(name="price_view")
+	private boolean priceView;
+	
+	@Column(name="quantità_view")
+	private boolean quantitàView;
+	
 	@OneToOne(fetch = FetchType.LAZY) 
 	@JoinColumn(name = "ID_sfondo_ordine") 
 	@JsonIgnore
@@ -55,11 +61,13 @@ public class Ordine implements Serializable {
 	@JsonBackReference
 	private Set<Item> items = new HashSet<Item>(); 
 	
-	public Ordine(Integer idOrdine, double importo, double budget, Date data) {
+	public Ordine(Integer idOrdine, double importo, double budget, Date data, boolean priceView, boolean quantitàView) {
 		this.idOrdine = idOrdine;
 		this.importo = importo;
 		this.budget = budget;
 		this.data = data;
+		this.priceView = priceView;
+		this.quantitàView = quantitàView;
 	}
 
 	public Integer getIdOrdine() {
@@ -78,6 +86,14 @@ public class Ordine implements Serializable {
 		return data;
 	}
 
+	public boolean isPriceView() {
+		return priceView;
+	}
+
+	public boolean isQuantitàView() {
+		return quantitàView;
+	}
+
 	public void setIdOrdine(Integer idOrdine) {
 		this.idOrdine = idOrdine;
 	}
@@ -94,9 +110,17 @@ public class Ordine implements Serializable {
 		this.data = data;
 	}
 
+	public void setPriceView(boolean priceView) {
+		this.priceView = priceView;
+	}
+
+	public void setQuantitàView(boolean quantitàView) {
+		this.quantitàView = quantitàView;
+	}
+
 	@Override
 	public String toString() {
-		return "Ordine [idOrdine=" + idOrdine + ", importo=" + importo + ", budget=" + budget + ", data=" + data + "]";
+		return "Ordine [idOrdine=" + idOrdine + ", importo=" + importo + ", budget=" + budget + ", data=" + data + ", priceView=" + priceView + ", quantitàView=" + quantitàView + "]";
 	}
 	
 

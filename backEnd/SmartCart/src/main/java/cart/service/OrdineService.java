@@ -40,6 +40,8 @@ public class OrdineService implements IOrdineService {
 			ordineOpt.get().setImporto(ordine.getImporto());
 			ordineOpt.get().setBudget(ordine.getBudget());
 			ordineOpt.get().setData(ordine.getData());
+			ordineOpt.get().setPriceView(ordine.isPriceView());
+			ordineOpt.get().setQuantitàView(ordine.isQuantitàView());
 			repository.save(ordineOpt.get());
 			return ordineOpt.get();
 		}

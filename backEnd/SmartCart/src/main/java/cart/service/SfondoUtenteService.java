@@ -37,7 +37,7 @@ public class SfondoUtenteService implements ISfondoUtenteService {
 	public SfondoUtente updateSfondoUtente(Integer id, SfondoUtente sfondoUtente) {
 		Optional<SfondoUtente> sfondoUtenteOpt = repository.findById(id);
 		if (sfondoUtenteOpt.isEmpty() == false) {
-			sfondoUtenteOpt.get().setViewmode(sfondoUtente.getViewmode());
+			sfondoUtenteOpt.get().setDarkMode(sfondoUtente.isDarkMode());
 			sfondoUtenteOpt.get().setUri(sfondoUtente.getUri());
 			repository.save(sfondoUtenteOpt.get());
 			return sfondoUtenteOpt.get();

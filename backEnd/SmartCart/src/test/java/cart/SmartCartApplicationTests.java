@@ -1,10 +1,10 @@
-package com.smartList;
+package cart;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class SmartCartApplicationTests {
 
 	@Test
 	void contextLoads() {

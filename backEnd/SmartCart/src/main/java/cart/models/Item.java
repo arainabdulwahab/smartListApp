@@ -29,7 +29,7 @@ public class Item implements Serializable {
 	private double prezzo;
 	
 	@Column(name="quantità")
-	private double quantità;
+	private String quantità;
 	
 	@Column(name="spunta")
 	private boolean spunta;
@@ -44,7 +44,7 @@ public class Item implements Serializable {
 	@JsonIgnore 
 	private Prodotto prodotto;
 	
-	public Item(Integer idItem, double prezzo, double quantità, boolean spunta) {
+	public Item(Integer idItem, double prezzo, String quantità, boolean spunta) {
 		this.idItem = idItem;
 		this.prezzo = prezzo;
 		this.quantità = quantità;
@@ -59,7 +59,7 @@ public class Item implements Serializable {
 		return prezzo;
 	}
 
-	public double getQuantità() {
+	public String getQuantità() {
 		return quantità;
 	}
 
@@ -75,7 +75,7 @@ public class Item implements Serializable {
 		this.prezzo = prezzo;
 	}
 
-	public void setQuantità(double quantità) {
+	public void setQuantità(String quantità) {
 		this.quantità = quantità;
 	}
 

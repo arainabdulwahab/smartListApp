@@ -25,8 +25,8 @@ public class SfondoUtente implements Serializable{
 	@Column(name="ID_sfondo_utente")
 	private Integer idSfondoUtente;
 	
-	@Column(name="viewmode")
-	private String viewmode;
+	@Column(name="darkmode")
+	private boolean darkMode;
 	
 	@Column(name="uri")
 	private String uri;
@@ -35,9 +35,9 @@ public class SfondoUtente implements Serializable{
 	@JsonBackReference
 	private Utente utente;
 
-	public SfondoUtente(Integer idSfondoUtente, String viewmode, String uri) {
+	public SfondoUtente(Integer idSfondoUtente, boolean darkMode, String uri) {
 		this.idSfondoUtente = idSfondoUtente;
-		this.viewmode = viewmode;
+		this.darkMode = darkMode;
 		this.uri = uri;
 	}
 
@@ -45,8 +45,8 @@ public class SfondoUtente implements Serializable{
 		return idSfondoUtente;
 	}
 
-	public String getViewmode() {
-		return viewmode;
+	public boolean isDarkMode() {
+		return darkMode;
 	}
 
 	public String getUri() {
@@ -57,8 +57,8 @@ public class SfondoUtente implements Serializable{
 		this.idSfondoUtente = idSfondoUtente;
 	}
 
-	public void setViewmode(String viewmode) {
-		this.viewmode = viewmode;
+	public void setDarkMode(boolean darkMode) {
+		this.darkMode = darkMode;
 	}
 
 	public void setUri(String uri) {
@@ -67,7 +67,7 @@ public class SfondoUtente implements Serializable{
 
 	@Override
 	public String toString() {
-		return "SfondoUtente [idSfondoUtente=" + idSfondoUtente + ", viewmode=" + viewmode + ", uri=" + uri + "]";
+		return "SfondoUtente [idSfondoUtente=" + idSfondoUtente + ", darkMode=" + darkMode + ", uri=" + uri + "]";
 	}
 
 }
