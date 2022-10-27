@@ -1,3 +1,15 @@
+//caricamento di tutte le liste per l'utente
+$(document).ready(function () {
+  let i = 0;
+  let ordiniList = [];
+  $.get('http://localhost:8080/api/ordini', function (response) {
+        console.log(response);
+  
+
+
+
+});
+
 //dichiarazione variabili globali per visualizzare quantità e prezzo - DA IMPLEMENTARE
 let showQuantity = false;
 let showPrice = false;
