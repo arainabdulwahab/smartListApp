@@ -18,8 +18,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="ordine")
@@ -58,16 +58,24 @@ public class Ordine implements Serializable {
 	private Utente utente; 
 	
 	@OneToMany(mappedBy = "ordine", fetch = FetchType.LAZY, cascade = CascadeType.ALL) 
-	@JsonBackReference
+	@JsonManagedReference
 	private Set<Item> items = new HashSet<Item>(); 
 	
-	public Ordine(Integer idOrdine, double importo, double budget, Date data, boolean priceView, boolean quantitàView) {
+	@Column(name="titolo")
+	private String titolo;
+	
+	public Ordine() {
+		
+	}
+	
+	public Ordine(Integer idOrdine, double importo, double budget, Date data, boolean priceView, boolean quantitàView, String titolo) {
 		this.idOrdine = idOrdine;
 		this.importo = importo;
 		this.budget = budget;
 		this.data = data;
 		this.priceView = priceView;
 		this.quantitàView = quantitàView;
+		this.titolo = titolo;
 	}
 
 	public Integer getIdOrdine() {
@@ -93,6 +101,10 @@ public class Ordine implements Serializable {
 	public boolean isQuantitàView() {
 		return quantitàView;
 	}
+	
+	public String getTitolo() {
+		return titolo;
+	}
 
 	public void setIdOrdine(Integer idOrdine) {
 		this.idOrdine = idOrdine;
@@ -117,10 +129,14 @@ public class Ordine implements Serializable {
 	public void setQuantitàView(boolean quantitàView) {
 		this.quantitàView = quantitàView;
 	}
+	
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
 
 	@Override
 	public String toString() {
-		return "Ordine [idOrdine=" + idOrdine + ", importo=" + importo + ", budget=" + budget + ", data=" + data + ", priceView=" + priceView + ", quantitàView=" + quantitàView + "]";
+		return "Ordine [idOrdine=" + idOrdine + ", importo=" + importo + ", budget=" + budget + ", data=" + data + ", priceView=" + priceView + ", quantitàView=" + quantitàView + ", titolo=" + titolo + "]";
 	}
 	
 

@@ -35,6 +35,10 @@ public class SfondoOrdine implements Serializable {
 	@JsonBackReference
 	private Ordine ordine;
 	
+	public SfondoOrdine() {
+		
+	}
+	
 	public SfondoOrdine(Integer idSfondoOrdine, String sfondo, String colore) {
 		this.idSfondoOrdine = idSfondoOrdine;
 		this.sfondo = sfondo;

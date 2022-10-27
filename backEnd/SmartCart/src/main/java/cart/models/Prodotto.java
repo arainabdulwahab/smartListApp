@@ -15,7 +15,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -36,12 +35,16 @@ public class Prodotto implements Serializable {
 	private String immagine;
 	
 	@OneToMany(mappedBy = "prodotto", fetch = FetchType.LAZY, cascade = CascadeType.ALL) 
-	@JsonBackReference 
+	@JsonManagedReference 
 	private Set<Item> items = new HashSet<Item>(); 
 	
 	@ManyToMany(mappedBy = "prodotti") 
 	@JsonManagedReference
 	private Set<Ricetta> ricette = new HashSet<Ricetta>(); 
+	
+	public Prodotto() {
+		
+	}
 	
 	public Prodotto(Integer idProdotto, String genere, String immagine) {
 		this.idProdotto = idProdotto;

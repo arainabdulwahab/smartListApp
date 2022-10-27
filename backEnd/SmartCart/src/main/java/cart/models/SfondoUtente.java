@@ -34,6 +34,10 @@ public class SfondoUtente implements Serializable{
 	@OneToOne(mappedBy = "sfondoUtente", fetch = FetchType.LAZY, cascade = CascadeType.ALL) 
 	@JsonBackReference
 	private Utente utente;
+	
+	public SfondoUtente() {
+		
+	}
 
 	public SfondoUtente(Integer idSfondoUtente, boolean darkMode, String uri) {
 		this.idSfondoUtente = idSfondoUtente;

@@ -44,6 +44,10 @@ public class Item implements Serializable {
 	@JsonIgnore 
 	private Prodotto prodotto;
 	
+	public Item() {
+		
+	}
+	
 	public Item(Integer idItem, double prezzo, String quantità, boolean spunta) {
 		this.idItem = idItem;
 		this.prezzo = prezzo;

@@ -16,8 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="utente")
@@ -48,8 +48,12 @@ public class Utente implements Serializable{
 	private SfondoUtente sfondoUtente; 
 	
 	@OneToMany(mappedBy = "utente", fetch = FetchType.LAZY, cascade = CascadeType.ALL) 
-	@JsonBackReference 
+	@JsonManagedReference 
 	private Set<Ordine> ordini = new HashSet<Ordine>(); 
+	
+	public Utente() {
+		
+	}
 
 	public Utente(Integer idUtente, String nome, String cognome, String email, String password) {
 		this.idUtente = idUtente;

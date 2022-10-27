@@ -63,6 +63,10 @@ public class Ricetta implements Serializable {
 	@JsonManagedReference
 	private Set<Categoria> categorie = new HashSet<Categoria>();
 	
+	public Ricetta() {
+		
+	}
+	
 	public Ricetta(Integer idRicetta, double importo, String nome, String immagine, String tipo, String descrizione, String procedimento) {
 		this.idRicetta = idRicetta;
 		this.importo = importo;
