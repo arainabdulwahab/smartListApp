@@ -1,19 +1,10 @@
-
-//caricamento di tutte le liste per l'utente
-$(document).ready(function () {
-  let i = 0;
-  let ordiniList = [];
-  $.get('http://localhost:8080/api/ordini', function (response) {
-console.log(response);
-    let lista = '';
-    for(cart of response){
-      i ++;
-      lista += `
+cart += `
+      
       <!-- single container-->
       <div class="col d-flex align-items-stretch bg-transparent" id="cloneList${i}">
         <div class="card border border-0 bg-transparent" style="width: 30rem;">
           <!-- Example split danger button -->
-          <div class="card   mb-4 " id="backImg${i}">
+          <div class="card   mb-4 " id="backImg">
             <!-- main to manipulate  -->
             <div class="card-header d-flex justify-content-between">
               <div class="pt-2 ">${cart.titolo}</div>
@@ -26,7 +17,7 @@ console.log(response);
                   </svg>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" onclick="cloneTodo${i}();">Duplica
+                  <li><a class="dropdown-item" href="#" onclick="cloneTodo();">Duplica
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-clipboard" viewBox="0 0 16 16">
                         <path
@@ -36,7 +27,7 @@ console.log(response);
                       </svg>
                     </a></li>
                   <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalShare${i}">Condividi
+                      data-bs-target="#exampleModalShare">Condividi
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-share" viewBox="0 0 16 16">
                         <path
@@ -45,7 +36,7 @@ console.log(response);
                     </a>
                   </li>
                   <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalColor${i}">Colore
+                      data-bs-target="#exampleModalColor">Colore
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-paint-bucket" viewBox="0 0 16 16">
                         <path
@@ -53,7 +44,7 @@ console.log(response);
                       </svg>
                     </a></li>
                   <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalSfondo${i}">Sfondo
+                      data-bs-target="#exampleModalSfondo">Sfondo
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-back" viewBox="0 0 16 16">
                         <path
@@ -72,46 +63,81 @@ console.log(response);
                 </ul>
               </div>
             </div>
-            <div class="card-body " data-bs-toggle="modal" data-bs-target="#staticBackdrop${i}"> `;
 
-            for(itemList of cart.items){
-             let opCheck = 'unchecked';
-              if(itemList.spunta){
-                opCheck = 'checked';
-              }
 
-            lista +=  `   
-                <div class="d-flex justify-content-center ">
-                  <img src="img/icon/almond.png" width="30px" height="30px"
-                    class="p-2 bd-highlight" style="background-color: grey;">
-                  <p class="p-2 flex-grow-1 bd-highlight">${itemList.idItem}</p>
-                  <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1" disabled ${opCheck}>
-                </div> <!-- end --> `;
-                console.log('results are ' + itemList);
-              
-            }
-              lista  += `
-            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="card-body " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+
+
+
+            <div class="d-flex justify-content-center ">
+              <img src="img/icon/almond.png" width="30px" height="30px"
+                class="p-2 bd-highlight" style="background-color: grey;">
+              <p class="p-2 flex-grow-1 bd-highlight">mandorle</p>
+              <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" disabled>
+            </div> <!-- end -->
+
+
+            <div class="d-flex justify-content-center ">
+              <img src="img/icon/almond.png" width="30px" height="30px"
+                class="p-2 bd-highlight" style="background-color: grey;">
+              <p class="p-2 flex-grow-1 bd-highlight">mandorle</p>
+              <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" disabled>
+            </div> <!-- end -->
+
+
+            <div class="d-flex justify-content-center ">
+              <img src="img/icon/almond.png" width="30px" height="30px"
+                class="p-2 bd-highlight" style="background-color: grey;">
+              <p class="p-2 flex-grow-1 bd-highlight">mandorle</p>
+              <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" disabled>
+            </div> <!-- end -->
+
+
+            <div class="d-flex justify-content-center ">
+              <img src="img/icon/almond.png" width="30px" height="30px"
+                class="p-2 bd-highlight" style="background-color: grey;">
+              <p class="p-2 flex-grow-1 bd-highlight">mandorle</p>
+              <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" disabled>
+            </div> <!-- end -->
+
+
+            <div class="d-flex justify-content-center ">
+              <img src="img/icon/almond.png" width="30px" height="30px"
+                class="p-2 bd-highlight" style="background-color: grey;">
+              <p class="p-2 flex-grow-1 bd-highlight">mandorle</p>
+              <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" disabled>
+            </div> <!-- end -->
+
+
+            <div class="d-flex justify-content-center ">
+              <img src="img/icon/almond.png" width="30px" height="30px"
+                class="p-2 bd-highlight" style="background-color: grey;">
+              <p class="p-2 flex-grow-1 bd-highlight">mandorle</p>
+              <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" disabled>
+            </div> <!-- end -->
           </div>
         </div>
       </div>
     </div><!-- end first card -->
 
       `;
-      
-      // update modal 
-      
-
-   ordiniList[i] = {
-    id: cart.id,
-    titolo: cart.titolo,
-    item:  cart.items
-  }
-  console.log(ordiniList[i]); //debug
-
-    }
-    $("#displayCloneList").append(lista);
-  });
-});
-
+      ordiniList[i] = {
+        id : cart.id,
+        titolo : cart.titolo
+      }
