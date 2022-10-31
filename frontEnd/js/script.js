@@ -5,18 +5,26 @@ $(document).ready(function () {
   $.get('http://localhost:8080/api/ordini', function (response) {
     // let res = JSON.parse(response);
     // console.log(res);
-    console.log(response);
+    //console.log(response);
     for (cart of response) {
       i++;
       ordine.innerHTML = '';
       ordine += ordineHeader(i, cart);
       //ordine += ordineUlDuplicate(i);
       ordine += `</ul> </div></div><div class="card-body " data-bs-toggle="modal" data-bs-target="#staticBackdrop${i}"> `;
+
+      // loop 
+      for(let i = 0; i < 3; i ++){  // limit array range
+        let cartItems = cart.items;
+        ordineCenter(cartItems);
+        //console.log(cartItems);
+      } // end for(itemList of cart.items)
       ordine += ordineCenter();
       ordine += ordineEnd();
       ordineList[i] = {
         id: cart.idOrdine,
         titolo: cart.titolo,
+        item : cart.items
       } // end   ordineList[i]
 
     } // end cart for of loop
@@ -24,6 +32,18 @@ $(document).ready(function () {
 
     $("#displayCloneList").append(ordine); // display ordine
 
+    // loop function 
+    function ordineCenter(cartItems) {
+    
+      let singeItm = `   
+      <div class="d-flex justify-content-center ">
+        <img src="img/icon/almond.png" width="30px" height="30px"
+          class="p-2 bd-highlight" style="background-color: grey;">
+        <p class="p-2 flex-grow-1 bd-highlight">item</p>
+        <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+          value="option1" disabled >
+      </div> <!-- end --> `;
+    }
   }); // end  $.get('http://localhost:8080/api/ordini')
 }); // end $(document).ready
 
@@ -56,23 +76,8 @@ function ordineHeader(i, cart) {
 } // end ordineHeader ()
 
 
-function duplicaFun(i){
-  alert(`fatto ${i}`);
-  let duplicate = document.getElementById(`cloneList${i}`);
-  
-  alert(duplicate);
-}
 
-function ordineCenter() {
-  return `   
-  <div class="d-flex justify-content-center ">
-    <img src="img/icon/almond.png" width="30px" height="30px"
-      class="p-2 bd-highlight" style="background-color: grey;">
-    <p class="p-2 flex-grow-1 bd-highlight">item</p>
-    <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-      value="option1" disabled >
-  </div> <!-- end --> `;
-}
+
 
 function ordineEnd() {
   return `
@@ -85,3 +90,10 @@ function ordineEnd() {
 `;
 } // end ordineCenter ()
 
+
+
+
+
+function duplicaFun(i){
+  
+}
