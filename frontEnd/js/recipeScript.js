@@ -7,7 +7,7 @@ $(document).ready(function () {
         stringifyJson = JSON.stringify(response);
         pareJson = JSON.parse(stringifyJson);
 
-        console.log(pareJson); //debug
+       // console.log(pareJson); //debug
 
         let ricette = '';
         for (recpie of pareJson) {
@@ -158,3 +158,5 @@ function ricetteModal(i, recpie){
 function importRicetta(i){
     alert('click importa ' + i);
 }
+
+
