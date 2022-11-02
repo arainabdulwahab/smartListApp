@@ -38,7 +38,7 @@ $(document).ready(function () {
     // loop function 
     function ordineCenter(cartItems) {
     
-      let singeItm = `   
+      let singeItem  = `   
       <div class="d-flex justify-content-center ">
         <img src="img/icon/almond.png" width="30px" height="30px"
           class="p-2 bd-highlight" style="background-color: grey;">
