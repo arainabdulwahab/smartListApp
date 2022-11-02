@@ -99,7 +99,7 @@ addButton.addEventListener('click', () => {
     console.log(inputItemQuntita.value);
   });
     
-  inputItemPrezzo.addEventListener('focus', () => {
+  inputItemPrezzo.addEventListener('focus', (e) => {
     console.log(inputItemPrezzo.value);
   });
   function search(){ inputItem.addEventListener('keyup',() =>{
