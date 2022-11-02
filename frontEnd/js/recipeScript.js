@@ -28,10 +28,10 @@ $(document).ready(function () {
 function ricettes(i, recpie){
     let ricetteCon = `  
      <!-- single container-->
-    <div class="card bg-white shadow-lg p-0 m-1 bg-body rounded" style="width: 15rem; height:80%;">
+    <div class="card bg-white shadow-lg p-0 m-1 bg-body rounded responsiveRecipe">
         <div class="  border border-0">
-            <div class="p-3 mb-2  text-white position-absolute top-0 end-0 " style="width: 40%">
-                <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded">
+            <div class="p-1 mb-1  text-white position-absolute top-0 end-0 " >
+                <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox">
                     <div class="p-2 bd-highlight ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-clock " viewBox="0 0 16 16">
@@ -49,14 +49,14 @@ function ricettes(i, recpie){
             <div class="card-body m-0 p-0 mb-4">
                 <div class="card-header d-flex justify-content-between bg-body border-0 ">
 
-                    <div class="p-2 me-auto p-2 bd-highlight">
-                        <p class="p-1 ps-2 pe-2 mb-0 bg-danger text-white rounded text-center">${recpie.tipo}</p>
+                    <div class="p-1 m-0 p-1 bd-highlight">
+                        <p class="p-1 ps-2 pe-2 mb-0 bg-danger text-white rounded text-center ">${recpie.tipo}</p>
                     </div>`;
                     let tags = recpie.categorie;
                     for(tagd of tags){ 
                         ricetteCon +=   `
-                            <div class="pt-2 p-2   bd-highlight">
-                                <p class="p-1 mb-0 ps-2 pe-2 bg-primary text-white rounded" id="${tagd.nome}" href="#${tagd.nome}">${tagd.nome}</p>
+                            <div class="pt-2 p-1   bd-highlight inline-flex">
+                                <p class="p-1 mb-0 ps-2 pe-2 bg-primary text-white rounded " id="${tagd.nome}" href="#${tagd.nome}">${tagd.nome}</p>
                             </div>
                             ` };
             ricetteCon+=  `

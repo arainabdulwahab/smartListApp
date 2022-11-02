@@ -3,9 +3,9 @@ $(document).ready(function () {
   let i = 0;
   let ordineList = [];
   $.get('http://localhost:8080/api/ordini', function (response) {
-    // let res = JSON.parse(response);
-    // console.log(res);
-    //console.log(response);
+    stringifyJson = JSON.stringify(response);
+    pareJson = JSON.parse(stringifyJson);
+    //console.log(pareJson);
     for (cart of response) {
       i++;
       ordine.innerHTML = '';
@@ -13,14 +13,24 @@ $(document).ready(function () {
       //ordine += ordineUlDuplicate(i);
       ordine += `</ul> </div></div><div class="card-body " data-bs-toggle="modal" data-bs-target="#staticBackdrop${i}"> `;
 
+
+      
+      let cartItems = Object.entries(cart.items);
+      let test =4 ;
       // loop 
-      for(let i = 0; i < 3; i ++){  // limit array range
-        let cartItems = cart.items;
-        ordineCenter(cartItems);
-        //console.log(cartItems);
+      {  // limit array range
+        `  ordine   += 
+          <div class="d-flex justify-content-center ">
+            <img src="img/icon/almond.png" width="30px" height="30px"
+              class="p-2 bd-highlight" style="background-color: grey;">
+            <p class="p-2 flex-grow-1 bd-highlight">item</p>
+            <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+              value="option1" disabled >
+          </div> <!-- end --> `;
+        console.log(cartItems);
       } // end for(itemList of cart.items)
-      ordine += ordineCenter();
       ordine += ordineEnd();
+      ordine += updateModal(i);
       ordine += colorModal(i);
       ordine += sfondoModal(i);
       ordine += shareBtnModal(i);
@@ -35,18 +45,7 @@ $(document).ready(function () {
 
     $("#displayCloneList").append(ordine); // display ordine
 
-    // loop function 
-    function ordineCenter(cartItems) {
-    
-      let singeItem  = `   
-      <div class="d-flex justify-content-center ">
-        <img src="img/icon/almond.png" width="30px" height="30px"
-          class="p-2 bd-highlight" style="background-color: grey;">
-        <p class="p-2 flex-grow-1 bd-highlight">item</p>
-        <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-          value="option1" disabled >
-      </div> <!-- end --> `;
-    }
+  
   }); // end  $.get('http://localhost:8080/api/ordini')
 }); // end $(document).ready
 
@@ -260,6 +259,128 @@ function shareBtnModal(i){
 
 `;
 }
+
+
+
+function updateModal (i){
+  return `
+  <!-- create Modal  list -->
+  <div class="modal fade modal-lg" id="staticBackdrop${i}" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="card  border border-0 mb-4">
+            <!-- main to manipulate  -->
+            <div class="card-header  d-flex justify-content-between">
+
+              <svg xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="modal" width="20" height="20"
+                fill="currentColor" class="bi bi-x-square mt-2" viewBox="0 0 16 16">
+                <path
+                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+              </svg>
+              <div class="pt-2 ">
+                <input class="form-control me-2" type="search" value="giorno di oggi " aria-label="Search">
+
+              </div>
+              <div class="btn-group dropstart">
+                <button class="btn border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                    <path
+                      d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                    </path>
+                  </svg>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Colore
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-paint-bucket" viewBox="0 0 16 16">
+                        <path
+                          d="M6.192 2.78c-.458-.677-.927-1.248-1.35-1.643a2.972 2.972 0 0 0-.71-.515c-.217-.104-.56-.205-.882-.02-.367.213-.427.63-.43.896-.003.304.064.664.173 1.044.196.687.556 1.528 1.035 2.402L.752 8.22c-.277.277-.269.656-.218.918.055.283.187.593.36.903.348.627.92 1.361 1.626 2.068.707.707 1.441 1.278 2.068 1.626.31.173.62.305.903.36.262.05.64.059.918-.218l5.615-5.615c.118.257.092.512.05.939-.03.292-.068.665-.073 1.176v.123h.003a1 1 0 0 0 1.993 0H14v-.057a1.01 1.01 0 0 0-.004-.117c-.055-1.25-.7-2.738-1.86-3.494a4.322 4.322 0 0 0-.211-.434c-.349-.626-.92-1.36-1.627-2.067-.707-.707-1.441-1.279-2.068-1.627-.31-.172-.62-.304-.903-.36-.262-.05-.64-.058-.918.219l-.217.216zM4.16 1.867c.381.356.844.922 1.311 1.632l-.704.705c-.382-.727-.66-1.402-.813-1.938a3.283 3.283 0 0 1-.131-.673c.091.061.204.15.337.274zm.394 3.965c.54.852 1.107 1.567 1.607 2.033a.5.5 0 1 0 .682-.732c-.453-.422-1.017-1.136-1.564-2.027l1.088-1.088c.054.12.115.243.183.365.349.627.92 1.361 1.627 2.068.706.707 1.44 1.278 2.068 1.626.122.068.244.13.365.183l-4.861 4.862a.571.571 0 0 1-.068-.01c-.137-.027-.342-.104-.608-.252-.524-.292-1.186-.8-1.846-1.46-.66-.66-1.168-1.32-1.46-1.846-.147-.265-.225-.47-.251-.607a.573.573 0 0 1-.01-.068l3.048-3.047zm2.87-1.935a2.44 2.44 0 0 1-.241-.561c.135.033.324.11.562.241.524.292 1.186.8 1.846 1.46.45.45.83.901 1.118 1.31a3.497 3.497 0 0 0-1.066.091 11.27 11.27 0 0 1-.76-.694c-.66-.66-1.167-1.322-1.458-1.847z">
+                        </path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Quantita
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bag" viewBox="0 0 16 16">
+                        <path
+                          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Prezzo
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-tags" viewBox="0 0 16 16">
+                        <path
+                          d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z" />
+                        <path
+                          d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Budget
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-percent" viewBox="0 0 16 16">
+                        <path
+                          d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div> <!-- end card-header -->
+            <div class="card-body " >
+              <!-- description of items -->
+              <div class="d-flex bd-highlight border-top">
+                <div class=" flex-grow-1 bd-highlight"></div>
+                <div class=" ps-4 pe-4 flex-grow-1 bd-highlight">
+                  <p>Products </p>
+                </div>
+                <div class="ps-2 mb-0 bd-highlight" style="width: 10%;">
+                  <p>Added to cart</p>
+                </div>
+                <div class="ps-2 bd-highlight">
+                  <p>Quantity</p>
+                </div>
+                <div class="ps-4 bd-highlight">
+                  <p>Price</p>
+                </div>
+              </div><!-- end description of items -->
+              <!-- righe   to be looped -->
+              <div class="mt-1 mb-3 d-flex justify-content-between" id="createItemToAdd">
+                
+
+
+            </div><!-- end card-body -->
+          </div><!-- end card -->
+          <!-- end modification  -->
+        </div>
+        <div>
+          <!-- bottom of list add button and show total price -->
+          <div class="d-flex bd-highlight border-top ps-4 pe-4">
+            <div class="p-2 flex-grow-1 bd-highlight">
+              <button type="button" class="btn btn-success " id="addButton">Add +</button>
+            </div>
+            <div class="p-2 bd-highlight">Total price: </div>
+            <div class="p-2 bd-highlight"><span>50</span><span>£</span></div>
+          </div><!-- end  bottom of list add button and show total price -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  `;
+}
+
+
 function duplicaFun(i){
   
 }
