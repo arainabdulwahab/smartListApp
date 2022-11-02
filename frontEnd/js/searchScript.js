@@ -52,7 +52,7 @@ addButton.addEventListener('click', () => {
   inputItem.type = 'search';
   inputItem.placeholder = 'noe';
   inputItem.className = 'p-2 flex-grow-1 bd-highlight';
- // inputItem.onclick = search();
+  inputItem.onclick = search();
 
 
   // match list div 
@@ -95,7 +95,15 @@ addButton.addEventListener('click', () => {
     console.log('delete done');
   });
     
-  
-   //function search(){ inputItem.addEventListener('keyup', () => searchStates(inputItem.value));  console.log(inputItem.value); };
+  inputItemQuntita.addEventListener('focus', () => {
+    console.log(inputItemQuntita.value);
+  });
+    
+  inputItemPrezzo.addEventListener('focus', () => {
+    console.log(inputItemPrezzo.value);
+  });
+  function search(){ inputItem.addEventListener('keyup',() =>{
+    console.log(inputItem.value);
+  })};
  
 });
