@@ -1,16 +1,14 @@
+let product = [];
+
 $(document).ready(function () {
     
   $("#createProductWithItem").click(function() {
         
     $.get('http://localhost:8080/api/prodotti', function (response) {
         stringifyJson = JSON.stringify(response);
-        pareJson = JSON.parse(stringifyJson);
+        product = JSON.parse(stringifyJson);
 
-        console.log(pareJson); //debug
-
-        for (prodotto of pareJson) {
-           
-        } /* end for of */
+        console.log(product)
     });
     });
 });
@@ -24,18 +22,11 @@ mainContainer.className = '';
 
 addButton.addEventListener('click', () => {
   let div = document.createElement('div');
-  div.className = "d-flex justify-content-center";
-  let singeItem  = `   
+  div.className = "mt-1 mb-3 d-flex justify-content-between";
   
-    <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-      value="option1" disabled >
-  </div> <!-- end --> `;
   // delete button
   let deleteButton = document.createElement('div');
-  deleteButton.className = 'm-1 ps-2 pe-2 pt-0 pb-0';
   deleteButton.innerHTML = 'X';
-  deleteButton.style.border = "1px solid black";
-  deleteButton.style.borderRadius = '40%';
 
 
  
@@ -54,16 +45,6 @@ addButton.addEventListener('click', () => {
   inputItem.className = 'p-2 flex-grow-1 bd-highlight';
   inputItem.onclick = search();
 
-
-  // match list div 
-  let matchList = document.createElement('div');
-  matchList.id = 'matchList';
- // matchList.className = 'btn btn-secondary';
- //<button type="button" class=""></button>
-  matchList.setAttribute('data-bs-container' ,'body');
-  matchList.setAttribute('data-bs-toggle' ,'popover');
-  matchList.setAttribute('data-bs-placement' ,'bottom');
-  matchList.setAttribute('data-bs-content' ,'Bottom popover');
 
 
   // add checkbox
@@ -89,7 +70,8 @@ addButton.addEventListener('click', () => {
  // inputItem.onclick = search();
 
   // append all item
-  inputAdd.append(div, deleteButton, imageSearch, inputItem, checkbox, inputItemQuntita, inputItemPrezzo, matchList);
+
+  inputAdd.append(div, deleteButton, imageSearch, inputItem, checkbox, inputItemQuntita, inputItemPrezzo);
 
   deleteButton.addEventListener('click', () => {
     console.log('delete done');
@@ -102,8 +84,33 @@ addButton.addEventListener('click', () => {
   inputItemPrezzo.addEventListener('focus', (e) => {
     console.log(inputItemPrezzo.value);
   });
-  function search(){ inputItem.addEventListener('keyup',() =>{
-    console.log(inputItem.value);
+  function search(){ inputItem.addEventListener('keyup',(e) =>{
+    let searched ;
+    let target ;
+      if(target === ' '){
+        preventdefault();
+       target = e.target.value;
+         searched = product.filter(pro => {
+          return pro.genere.includes(target); 
+        });
+      }
+    console.log(searched)
   })};
+ 
+
+  function displayObj(){
+    
+  // match list div 
+  let matchList = document.createElement('div');
+  matchList.id = 'matchList';
+ // matchList.className = 'btn btn-secondary';
+ //<button type="button" class=""></button>
+  matchList.setAttribute('data-bs-container' ,'body');
+  matchList.setAttribute('data-bs-toggle' ,'popover');
+  matchList.setAttribute('data-bs-placement' ,'bottom');
+  matchList.setAttribute('data-bs-content' ,'Bottom popover');
+
+  }
+
  
 });
