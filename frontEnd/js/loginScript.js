@@ -17,7 +17,7 @@ $(document).ready(function () {
         };
         let jsonParams = JSON.stringify(params);
         $.ajax({
-            url: `${baseURL}/api/auth/login`,      // da modificare ###########
+            url: `${baseURL}/login`,      // da modificare ###########
             contentType: 'application/json;charset=UTF-8',
             type: "POST",
             data: jsonParams,
@@ -39,21 +39,13 @@ $(document).ready(function () {
             }
         });
     });
-    //register  login
+    //register  
     $("#registerBtnForuser").click(function (event) {
         event.preventDefault();
         let name = $('#nameRegister').val();
         let email = $('#emailRegister').val();
         let password = $('#passwordRegister2').val();
-        let password2 = $('#passwordRegister22').val();
         let params;
-        if (password === password2) {
-            params = {
-                name: name,
-                email: email,
-                password: password
-            };
-        }
         let jsonParams = JSON.stringify(params);
         $.ajax({
             url: `${baseURL}/api/auth/login`,         // da modificare ###########
@@ -69,7 +61,9 @@ $(document).ready(function () {
                 extractPayload(token);
                 //verifica
 
-                window.location.replace("/index.html"); // manda utente al index.html
+                window.location("/index.html"); // manda utente al index.html
+
+
                 console.log('verifica = ' + $.cookie('jwt'));
                 console.log('JWTHeader = ' + JSON.stringify(JWTHeader));
             },
@@ -78,21 +72,21 @@ $(document).ready(function () {
             }
         });
     });
-    // // Visualizzazione di tutti gli utenti
-    // $('#getUserBtn').click(function () {
-    //     $.ajax({
-    //         url: `${baseURL}/api/admin/users`,
-    //         headers: JWTHeader,
-    //         contentType: 'application/json;charset=UTF-8',
-    //         type: "GET",
-    //         success: function (response) {
-    //             console.log(response);
-    //         },
-    //         error: function () {
-    //             alert('accesso non autorizzato');
-    //         } 
-    //     });
-    // });
+    // Visualizzazione di tutti gli utenti
+    $('#getUserBtn').click(function () {
+        $.ajax({
+            url: `${baseURL}/api/admin/users`,
+            headers: JWTHeader,
+            contentType: 'application/json;charset=UTF-8',
+            type: "GET",
+            success: function (response) {
+                console.log(response);
+            },
+            error: function () {
+                alert('accesso non autorizzato');
+            } 
+        });
+    });
 
     // Logout
     $('#logoutBtn').click(function () {

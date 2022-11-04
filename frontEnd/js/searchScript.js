@@ -1,20 +1,22 @@
-let product = [];
 
+const inputAdd = document.getElementById('createItemToAdd');
+const addButton = document.getElementById('addButton');
+
+let prodotto =[];
 $(document).ready(function () {
     
   $("#createProductWithItem").click(function() {
         
     $.get('http://localhost:8080/api/prodotti', function (response) {
         stringifyJson = JSON.stringify(response);
-        product = JSON.parse(stringifyJson);
+        let parseJson = JSON.parse(stringifyJson);
 
-        console.log(product)
+        console.log(parseJson);
     });
     });
 });
 
-const inputAdd = document.getElementById('createItemToAdd');
-const addButton = document.getElementById('addButton');
+
 
 
 let mainContainer = document.createElement('div');
@@ -85,21 +87,18 @@ addButton.addEventListener('click', () => {
     console.log(inputItemPrezzo.value);
   });
   function search(){ inputItem.addEventListener('keyup',(e) =>{
-    let searched ;
-    let target ;
-      if(target === ' '){
-        preventdefault();
-       target = e.target.value;
-         searched = product.filter(pro => {
-          return pro.genere.includes(target); 
-        });
-      }
+    const target = e.target.value;
+    const searched = product.filter(pro => {
+      return pro.genere.includes(target); 
+    });
     console.log(searched)
   })};
- 
 
-  function displayObj(){
-    
+
+
+
+
+  
   // match list div 
   let matchList = document.createElement('div');
   matchList.id = 'matchList';
@@ -109,8 +108,8 @@ addButton.addEventListener('click', () => {
   matchList.setAttribute('data-bs-toggle' ,'popover');
   matchList.setAttribute('data-bs-placement' ,'bottom');
   matchList.setAttribute('data-bs-content' ,'Bottom popover');
+  return matchList;
 
-  }
-
+ 
  
 });

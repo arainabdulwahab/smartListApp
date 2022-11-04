@@ -1,50 +1,67 @@
 let ordine = '';
 $(document).ready(function () {
-  let i = 0;
+  // let i = 0;
   let ordineList = [];
-  $.get('http://localhost:8080/api/ordini/utenti/3', function (response) {
-   // console.log(response);
-    for (cart of response) {
-      i++;
-      ordine.innerHTML = '';
-      ordine += ordineHeader(i, cart);
-      //ordine += ordineUlDuplicate(i);
-      //let cartItems = Object.entries(cart.items);
-      // for (let result of cart.items.slice(0,3)) {  // limit array range
-      //   let countItem = 0;
-      //   if (countItem < cart.items.length) {
-          
-      //     countItem++;
-            let checked = 'unchecked';
-            if (cart.spunta) {
-              checked = 'checked';
-            }
-            ordine += ` 
+  $.get('http://localhost:8080/api/ordini/utenti/1', function (response) {
+    stringifyJson = JSON.stringify(response);
+
+    let ordineList = JSON.parse(stringifyJson);
+    //let ordine;
+    console.log(ordineList);
+    for (let i = 0; i < ordineList.length; i++) {
+      let lista = ordineList[i];
+      let ordine = ordineHeader(i, lista.titolo);
+      console.log(lista.titolo);
+      //for (cart of lista) {
+      
+        ordine += ` 
           <div class="d-flex justify-content-center ">
-            <img src="${cart.img}" width="30px" height="30px"
-              class="p-2 bd-highlight" style="background-color: grey;">
-            <p class="p-2 flex-grow-1 bd-highlight">${cart.genere}</p>
+            <img src="${lista.img}" width="35px" height="35px"
+              class="p-2 bd-highlight" style="background-color: #f2f2f2;">
+            <p class="p-2 flex-grow-1 bd-highlight">${lista.genere}</p>
             <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-              value="option1" disabled  ${checked}>
+              value="option1" disabled  ${lista.spunta}>
           </div> <!-- end --> `;
-          
-        //}
-   // } // end for(itemList of cart.items)
-      ordine += ordineEnd();
-      ordine += updateModal(i, cart);
-      ordine += colorModal(i, cart);
-      ordine += sfondoModal(i);
-      ordine += shareBtnModal(i);
-      ordineList[i] = {
-        id: cart.idOrdine,
-        titolo: cart.titolo //,
+
+
+
+        //ordine += ordineUlDuplicate(i);
+        //let cartItems = Object.entries(cart.items);
+        // for (let result of cart.items.slice(0,3)) {  // limit array range
+        //   let countItem = 0;
+        //   if (countItem < cart.items.length) {
+
+        //     //     countItem++;
+        //           let checked = 'unchecked';
+        //           if (cart.spunta) {
+        //             checked = 'checked';
+        //           }
+        //           ordine += ` 
+        //         <div class="d-flex justify-content-center ">
+        //           <img src="${cart.img}" width="30px" height="30px"
+        //             class="p-2 bd-highlight" style="background-color: grey;">
+        //           <p class="p-2 flex-grow-1 bd-highlight">${cart.genere}</p>
+        //           <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+        //             value="option1" disabled  ${checked}>
+        //         </div> <!-- end --> `;
+
+        //       //}
+        //  // } // end for(itemList of cart.items)
+        //     ordine += ordineEnd();
+        //     ordine += updateModal(i, cart);
+        //     ordine += colorModal(i, cart);
+        //     ordine += sfondoModal(i);
+        //     ordine += shareBtnModal(i);
+        //     ordineList[i] = {
+        //       id: cart.idOrdine,
+        //       titolo: cart.titolo //,
         //item: cart.items
-      } // end   ordineList[i]
+        //} // end   ordineList[i]
 
-    } // end cart for of loop
+      //} // end cart for of loop
+      $("#displayCloneList").append(ordine); // display ordine
+    }
 
-
-    $("#displayCloneList").append(ordine); // display ordine
   }); // end  $.get('http://localhost:8080/api/ordini')
 }); // end $(document).ready
 
@@ -60,7 +77,7 @@ function ordineHeader(i, cart) {
       <div class="card   mb-4 " id="backImg">
         <!-- main to manipulate  -->
         <div class="card-header d-flex justify-content-between">
-          <div class="pt-2 ">${cart.titolo}</div>
+          <div class="pt-2 ">${cart}</div>
           <div class="btn-group dropstart"> 
           <button class="btn border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
