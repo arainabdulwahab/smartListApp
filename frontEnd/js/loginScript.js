@@ -27,7 +27,7 @@ $(document).ready(function () {
                 console.log("token ricevuto = " + token);
                 $.cookie('jwt', token);
                 JWTHeader = updateHeader();
-                extractPayload(token);
+                //extractPayload(token);
                 //verifica
 
                 window.location.replace("/index.html"); // manda utente al index.html
@@ -113,7 +113,7 @@ function extractPayload(token) {
     let objPayload = JSON.parse(jsonPayload);
     let userEmail = objPayload.sub;
     let dataExp = objPayload.exp;
-    console.log("user email = " + userEmail + ", data expiration = " + dataExp);
-
+   // console.log("user email = " + userEmail + ", data expiration = " + dataExp);
+    return userEmail;
 }
 

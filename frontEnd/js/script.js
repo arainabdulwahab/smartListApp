@@ -1,8 +1,14 @@
 let ordine = '';
 $(document).ready(function () {
-  //let i = 0;
-  //let ordineList = [];
-  $.get('http://localhost:8080/api/ordini/utenti/1', function (ordini) {
+  let token = $.cookie('jwt');
+  let email = extractPayload(token);
+  let idUtente= '';
+  $.get(`http://localhost:8080/api/utenti/email/${email}`, function (response){
+    console.log('utente ' + response);
+      idUtente = response.idUtente; 
+
+  });
+  $.get(`http://localhost:8080/api/ordini/utenti/${idUtente}`, function (ordini) {
     /*
      * ordini è un array di array i cui elementi sono ordini
      * all'interno di ogni array ci sono gli item
@@ -426,4 +432,18 @@ function shareBtnModal(i) {
 
 function duplicaFun(i) {
 
+}
+
+
+function extractPayload(token) {
+  let array = token.split('.');
+  let payload = array[1];
+  let jsonPayload = atob(payload);
+  console.log("jsonPayload = " + jsonPayload);
+  //estrazione dei dati dal payload
+  let objPayload = JSON.parse(jsonPayload);
+  let userEmail = objPayload.sub;
+  let dataExp = objPayload.exp;
+  //console.log("user email = " + userEmail + ", data expiration = " + dataExp);
+  return userEmail;
 }
