@@ -1,29 +1,38 @@
 let ordine = '';
 $(document).ready(function () {
-  // let i = 0;
-  let ordineList = [];
-  $.get('http://localhost:8080/api/ordini/utenti/1', function (response) {
-    stringifyJson = JSON.stringify(response);
+  //let i = 0;
+  //let ordineList = [];
+  $.get('http://localhost:8080/api/ordini/utenti/1', function (ordini) {
+    /*
+     * ordini è un array di array i cui elementi sono ordini
+     * all'interno di ogni array ci sono gli item
+     */
+    console.log(ordini);  //debug
 
-    let ordineList = JSON.parse(stringifyJson);
-    //let ordine;
-    console.log(ordineList);
-    for (let i = 0; i < ordineList.length; i++) {
-      let lista = ordineList[i];
-      let ordine = ordineHeader(i, lista.titolo);
-      console.log(lista.titolo);
-      //for (cart of lista) {
-      
+    for (let i = 0; i < ordini.length; i++) {
+      let lista = ordini[i];
+      console.log(lista); //debug
+      let ordine = ordineHeader(i, lista[i].titolo);
+      //let j = 0;
+      for (item of lista.slice(0,3)) {
         ordine += ` 
           <div class="d-flex justify-content-center ">
-            <img src="${lista.img}" width="35px" height="35px"
+            <img src="${item.img}" width="35px" height="35px"
               class="p-2 bd-highlight" style="background-color: #f2f2f2;">
-            <p class="p-2 flex-grow-1 bd-highlight">${lista.genere}</p>
-            <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-              value="option1" disabled  ${lista.spunta}>
-          </div> <!-- end --> `;
-
-
+            <p class="p-2 flex-grow-1 bd-highlight">${item.genere}</p>
+            <input class="form-check-input mt-2" type="checkbox" name="inlineChe kOptions" id="inlineCheckId"
+              value="option1"`;
+        if (item.spunta == 1) {
+          ordine += ` checked disabled`;
+        } 
+       //  j++;   
+        ordine += `></div> <!-- end -->`;
+        
+            //ordine += ordineEnd();
+            ordine += updateModal(i, item);
+            ordine += colorModal(i, item);
+            ordine += sfondoModal(i);
+            ordine += shareBtnModal(i);
 
         //ordine += ordineUlDuplicate(i);
         //let cartItems = Object.entries(cart.items);
@@ -47,22 +56,17 @@ $(document).ready(function () {
 
         //       //}
         //  // } // end for(itemList of cart.items)
-        //     ordine += ordineEnd();
-        //     ordine += updateModal(i, cart);
-        //     ordine += colorModal(i, cart);
-        //     ordine += sfondoModal(i);
-        //     ordine += shareBtnModal(i);
         //     ordineList[i] = {
         //       id: cart.idOrdine,
         //       titolo: cart.titolo //,
         //item: cart.items
         //} // end   ordineList[i]
 
-      //} // end cart for of loop
-      $("#displayCloneList").append(ordine); // display ordine
-    }
+        } // end item for of loop
+        $("#displayCloneList").append(ordine); // display ordine
+      }
 
-  }); // end  $.get('http://localhost:8080/api/ordini')
+    }); // end  $.get('http://localhost:8080/api/ordini')
 }); // end $(document).ready
 
 

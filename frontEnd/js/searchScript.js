@@ -8,8 +8,8 @@ $(document).ready(function () {
   $("#createProductWithItem").click(function() {
         
     $.get('http://localhost:8080/api/prodotti', function (response) {
-        stringifyJson = JSON.stringify(response);
-        let parseJson = JSON.parse(stringifyJson);
+        // stringifyJson = JSON.stringify(response);
+        // let parseJson = JSON.parse(stringifyJson);
 
         console.log(parseJson);
     });

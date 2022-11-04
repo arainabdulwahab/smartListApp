@@ -4,13 +4,13 @@ $(document).ready(function () {
     let stringifyJson;
     let pareJson ;
     $.get('http://localhost:8080/api/ricette', function (response) {
-        stringifyJson = JSON.stringify(response);
-        pareJson = JSON.parse(stringifyJson);
+        // stringifyJson = JSON.stringify(response);
+        // pareJson = JSON.parse(stringifyJson);
 
        // console.log(pareJson); //debug
 
         let ricette = '';
-        for (recpie of pareJson) {
+        for (recpie of response) {
             i++;
             ricette += ricettes(i, recpie);
             ricette +=  ricetteModal(i, recpie);
