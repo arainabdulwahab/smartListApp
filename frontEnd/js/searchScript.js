@@ -1,7 +1,7 @@
 
 const inputAdd = document.getElementById('createItemToAdd');
 const addButton = document.getElementById('addButton');
-
+`
 let prodotto =[];
 $(document).ready(function () {
     
@@ -112,4 +112,4 @@ addButton.addEventListener('click', () => {
 
  
  
-});
+});`
