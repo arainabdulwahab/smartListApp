@@ -34,7 +34,7 @@ $(document).ready(function () {
           let ordine = ordineHeader(i, lista[0].titolo);
           for (item of lista.slice(0,3)) {
             ordine += ` 
-                <div class="d-flex justify-content-center ">
+                <div class="d-flex justify-content-center " >
                   <img src="${item.img}" width="35px" height="35px"
                     class="p-2 bd-highlight" style="background-color: #f2f2f2;">
                   <p class="p-2 flex-grow-1 bd-highlight">${item.genere}</p>
@@ -48,7 +48,7 @@ $(document).ready(function () {
             ordine += colorModal(i);
             ordine += sfondoModal(i);
             ordine += shareBtnModal(i);
-            ordine += updateModal(is);
+            ordine += updateModal(i);
 
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
