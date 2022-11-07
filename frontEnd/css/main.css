@@ -18,6 +18,10 @@ body {
   width: 11rem;
   height: 80%;
 }
+
+.smallScreenDisplay{
+  display: none;
+}
 @media screen and (min-width: 800px) {
 
   .signUp {
@@ -29,7 +33,12 @@ body {
     height: 40rem;
     height: 80%;
   }
-
+  .offcanvas{
+    display: none;
+  }
+  #offCanvasDisplay{
+    display: none;
+  }
 }
 
 .card {
