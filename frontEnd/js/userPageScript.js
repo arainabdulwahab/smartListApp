@@ -32,9 +32,9 @@ $(document).ready(function () {
           let lista = ordini[i];
           console.log(lista); //debug
           let ordine = ordineHeader(i, lista[0].titolo);
-          for (item of lista.slice(0,3)) {
+          for (item of lista.slice(0, 3)) {
             ordine += ` 
-                <div class="d-flex justify-content-center " >
+                <div class="d-flex justify-content-center ">
                   <img src="${item.img}" width="35px" height="35px"
                     class="p-2 bd-highlight" style="background-color: #f2f2f2;">
                   <p class="p-2 flex-grow-1 bd-highlight">${item.genere}</p>
@@ -45,14 +45,14 @@ $(document).ready(function () {
             }
             ordine += `></div> <!-- end -->`;
 
+
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
-          
-            ordine += ordineEnd();
-            ordine += colorModal(i);
-            ordine += sfondoModal(i);
-            ordine += shareBtnModal(i);
-            ordine += updateModal(i);
+          ordine += ordineEnd();
+          ordine += updateModal(i, item);
+          ordine += colorModal(i);
+          ordine += sfondoModal(i);
+          ordine += shareBtnModal(i);
           $("#displayCloneList").append(ordine); // display ordine
         } /* end for esterno */
       } /* end success */
@@ -61,74 +61,79 @@ $(document).ready(function () {
   } else {
     window.location.replace("/index.html"); //accesso vietato a userPage
   }
+
+
+  // Gestione dropdown e navbar collapsed
+  $(window).on('resize', function () {
+    var win = $(this); //this = window
+    if (win.width() < 992) {
+      $('#navDropdown').removeClass('dropstart');
+    } else {
+      $('#navDropdown').addClass('dropstart');
+    }
+  });
+
+  // Logout
+  $('#logoutBtn').click(function () {
+    $.cookie('jwt', '');
+    JWTHeader = updateHeader();
+  });
+
+  // Gestione sfondo ordine
+  $(document).on('click', '.color-ordine', function (event) {
+    selectedColor = $(event.target);
+    let color = selectedColor.attr("data-sfondo");
+    let ordine = selectedColor.attr("data-ordine") + 1;
+    let params = {
+      color: color
+    }
+    let jsonParams = JSON.stringify(params);
+    console.log(jsonParams); //debug
+    $.ajax({
+      url: `${baseURL}/api/ordine/sfondo_update/${ordine}`,
+      headers: JWTHeader,
+      contentType: 'application/json;charset=UTF-8',
+      type: "PUT",
+      data: jsonParams,
+      success: function (response) {
+        alert('colore sfondo cambiato');
+      },
+      error: function (response) {
+        alert('qualcosa non ha funzionato');
+      }
+    });
+
+  });
+
 }); /* end $(document).ready */
 
-// Gestione dropdown e navbar collapsed
-$(window).on('resize', function(){
-  var win = $(this); //this = window
-  if (win.width()< 992) { 
-    $('#navDropdown').removeClass('dropstart'); 
-  } else {
-    $('#navDropdown').addClass('dropstart');
-  }
-});
 
-// Logout
-$('#logoutBtn').click(function () {
-  $.cookie('jwt', '');
-  JWTHeader = updateHeader();
-});
-
-// Gestione colori ordine
 /*
-$('.color-ordine').click(function(event) {
-  let selectedColor = event.target;
-  let color = selectedColor.attr("data-sfondo");
-  let ordine = selectedColor.attr("data-ordine");
-  let params = {
-    color: color
-  }
-  let jsonParams = JSON.stringify(params);
-  console.log(jsonParams); //debug
-  $.ajax({
-    url: `${baseURL}/api/colore_ordine/update/${ordine}`,
-    headers: JWTHeader,
-    contentType: 'application/json;charset=UTF-8',
-    type: "PUT",
-    data: jsonParams,
-    success: function (response) {
-      alert('colore sfondo cambiato');
-    },
-    error: function(response) {
-      alert('qualcosa non ha funzionato');
-    }
-  });
+    //ordine += ordineUlDuplicate(i);
+    //let cartItems = Object.entries(cart.items);
+    // for (let result of cart.items.slice(0,3)) {  // limit array range
+    //   let countItem = 0;
+    //   if (countItem < cart.items.length) {
 
-});
+    //     //     countItem++;
+    //           let checked = 'unchecked';
+    //           if (cart.spunta) {
+    //             checked = 'checked';
+    //           }
+    //           ordine += ` 
+    //         <div class="d-flex justify-content-center ">
+    //           <img src="${cart.img}" width="30px" height="30px"
+    //             class="p-2 bd-highlight" style="background-color: grey;">
+    //           <p class="p-2 flex-grow-1 bd-highlight">${cart.genere}</p>
+    //           <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+    //             value="option1" disabled  ${checked}>
+    //         </div> <!-- end --> `;
+
+    //       //}
+    //  // } // end for(itemList of cart.items)
+    //     ordineList[i] = {
+    //       id: cart.idOrdine,
+    //       titolo: cart.titolo //,
+    //item: cart.items
+    //} // end   ordineList[i]
 */
-
-// Gestione sfondo ordine
-$('.sfondo-ordine').click(function(event) {
-  let selectedColor = event.target;
-  let color = selectedColor.attr("data-sfondo");
-  let ordine = selectedColor.attr("data-ordine");
-  let params = {
-    color: color
-  }
-  let jsonParams = JSON.stringify(params);
-  console.log(jsonParams); //debug
-  $.ajax({
-    url: `${baseURL}/api/colore_ordine/update/${ordine}`,
-    headers: JWTHeader,
-    contentType: 'application/json;charset=UTF-8',
-    type: "PUT",
-    data: jsonParams,
-    success: function (response) {
-      alert('colore sfondo cambiato');
-    },
-    error: function(response) {
-      alert('qualcosa non ha funzionato');
-    }
-  });
-
-});

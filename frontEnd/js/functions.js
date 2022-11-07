@@ -445,7 +445,7 @@ function sfondoModal(i) {
     <div class="modal-body">
       <div class="d-flex justify-content-start text-center">
         <div class="d-inline m-1 p-1">
-          <div class="rounded-circle m-1 sfondo-ordine" style="width: 50px; height: 50px; background-color:#D88D8C;" data-sfondo="#D88D8C" data-ordine="${i}"></div>
+          <div class="rounded-circle m-1 sfondo-ordine" style="width: 50px; height: 50px; background-color:#D88D8C;" data-sfondo="3" data-ordine="${i}"></div>
           <div class="rounded-circle m-1 sfondo-ordine" style="width: 50px; height: 50px; background-color:#96D9B8;" data-sfondo="#96D9B8" data-ordine="${i}"></div>
         </div>
         <div class="d-inline m-1 p-1">
