@@ -58,7 +58,7 @@ $(document).ready(function () {
   });
 });
 
-function ordineHead(i, cart) {
+/*function ordineHead(i, cart) {
   return `
       <!-- single container-->
       <div class="col d-flex align-items-stretch bg-transparent" id="cloneList${i}">
@@ -128,7 +128,7 @@ function ordineHead(i, cart) {
               </div>
             </div>
             <div class="card-body " data-bs-toggle="modal" data-bs-target="#staticBackdrop${i}"> `;
-}
+}*/
 
 document.addEventListener('DOMContentLoaded', function() {
     var button = document.createElement('button');
@@ -376,7 +376,7 @@ function ordineEnd() {
 
 
 
-
+/*
 <!-- righe   to be looped -->
 <div class="mt-1 mb-3 d-flex justify-content-between">
   
@@ -411,7 +411,7 @@ function ordineEnd() {
   </div>
 </div> <!-- end righa-->
 
-
+*/
 
 
 
