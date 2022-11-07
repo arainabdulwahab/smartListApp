@@ -6,8 +6,10 @@ body {
 .loginBackground {
   background-image: url("../img/wallpaper/backgroundImageLogin.webp");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   opacity: 0.902;
+  overflow-y: hidden;
 }
 
 #mainNavBar {
