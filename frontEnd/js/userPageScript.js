@@ -45,10 +45,10 @@ $(document).ready(function () {
             }
             ordine += `></div> <!-- end -->`;
             //ordine += ordineEnd();
-           // ordine += updateModal(i);
             ordine += colorModal(i);
             ordine += sfondoModal(i);
             ordine += shareBtnModal(i);
+            ordine += updateModal(is);
 
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
@@ -79,6 +79,7 @@ $('#logoutBtn').click(function () {
 });
 
 // Gestione colori ordine
+/*
 $('.color-ordine').click(function(event) {
   let selectedColor = event.target;
   let color = selectedColor.attr("data-sfondo");
@@ -103,6 +104,7 @@ $('.color-ordine').click(function(event) {
   });
 
 });
+*/
 
 // Gestione sfondo ordine
 $('.sfondo-ordine').click(function(event) {
