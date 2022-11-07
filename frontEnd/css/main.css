@@ -4,14 +4,14 @@ body {
 }
 
 .loginBackground {
-  background-image: url("../img/wallpaper/backgroundImageLogin.jpg");
+  background-image: url("../img/wallpaper/backgroundImageLogin.webp");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.902;
 }
 
 #mainNavBar {
-  
+
 }
 
 .signUp {
