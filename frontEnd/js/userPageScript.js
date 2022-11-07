@@ -44,14 +44,15 @@ $(document).ready(function () {
               ordine += ` checked disabled`;
             }
             ordine += `></div> <!-- end -->`;
-            //ordine += ordineEnd();
+
+            /******* qui bisogna estrarre il colore impostato dall'utente */
+          } /* end for interno */
+          
+            ordine += ordineEnd();
             ordine += colorModal(i);
             ordine += sfondoModal(i);
             ordine += shareBtnModal(i);
             ordine += updateModal(i);
-
-            /******* qui bisogna estrarre il colore impostato dall'utente */
-          } /* end for interno */
           $("#displayCloneList").append(ordine); // display ordine
         } /* end for esterno */
       } /* end success */

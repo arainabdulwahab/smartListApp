@@ -33,7 +33,7 @@ $(document).ready(function () {
                 console.log('verifica = ' + $.cookie('jwt'));
                 console.log('JWTHeader = ' + JSON.stringify(JWTHeader));
 
-                window.location.replace("/userPage.html"); // manda utente al index.html    
+                window.location.replace("userPage.html"); // manda utente al index.html    
             },
             error: function () {
                 alert('login errato');
