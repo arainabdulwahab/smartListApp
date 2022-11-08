@@ -34,7 +34,7 @@
         <a class="navbar-brand" href="index.html">
           <img src="img/logo/logo.png" alt="" width="120px" height="30px">
         </a>
-        
+
         <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight" id="offCanvasDisplay">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-menu-button"
@@ -51,10 +51,11 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body" id="offCanvasDisplay">
-                <a class="nav-link active m-2" aria-current="page" href="userPage.html" style="font-size: large;  text-decoration: underline;">Home</a>
-           
-                <a class="nav-link m-2" aria-current="page" href="recipe.html">recipe</a>
-             
+            <a class="nav-link active m-2" aria-current="page" href="userPage.html"
+              style="font-size: large;  text-decoration: underline;">Home</a>
+
+            <a class="nav-link m-2" aria-current="page" href="recipe.html">recipe</a>
+
 
             <div class="btn-group mt-2">
 
@@ -66,7 +67,7 @@
                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                 </svg>
               </button>
-              
+
               <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="visually-hidden">Toggle Dropdown</span>
@@ -87,14 +88,15 @@
 
 
         </div>
-        <button class="navbar-toggler smallScreenDisplay" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler smallScreenDisplay" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse smallScreenDisplay" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="userPage.html" >Home</a>
+              <a class="nav-link active" aria-current="page" href="userPage.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " aria-current="page" href="recipe.html">recipe</a>
@@ -148,7 +150,7 @@
       tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body">
+          <div class="modal-head">
             <div class="card  border border-0 mb-4">
               <!-- main to manipulate  -->
               <div class="card-header  d-flex justify-content-between">
@@ -163,7 +165,7 @@
                 <div class="pt-2 ">
                   <input class="form-control me-2" type="search" value="giorno di oggi " aria-label="Search">
 
-                </div>
+                </div> <!-- end pt-2-->
                 <div class="btn-group dropstart">
                   <button class="btn border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -213,81 +215,96 @@
                         </svg>
                       </a>
                     </li>
-                  </ul>
+                  </ul><!-- end dropdown-menu -->
+                </div><!-- end btn-group dropstart -->
+              </div> <!-- end card-header  d-flex justify-content-between-->
+              <div class="searchItem mt-1 mb-3 d-flex justify-content-between">
+
+                <div class="p-2">
+                  <input class="form-control me-2" type="search" placeholder="prodotto " aria-label="Search">
                 </div>
-              </div> <!-- end card-header -->
-              <div class="card-body ">
-                <!-- description of items -->
-                <div class="d-flex bd-highlight border-top">
-                  <div class=" flex-grow-1 bd-highlight"></div>
-                  <div class=" ps-4 pe-4 flex-grow-1 bd-highlight">
-                    <p>Products </p>
-                  </div>
-                  <div class="ps-2 mb-0 bd-highlight" style="width: 10%;">
-                    <p>Added to cart</p>
-                  </div>
-                  <div class="ps-2 bd-highlight">
-                    <p>Quantity</p>
-                  </div>
-                  <div class="ps-4 bd-highlight">
-                    <p>Price</p>
-                  </div>
-                </div><!-- end description of items -->
-                <!-- righe   to be looped -->
-                <div class="mt-1 mb-3 " id="createItemToAdd">
 
+                <div class="p-2">
+                  <input class="form-control me-2" placeholder="Quantita ">
+                </div>
 
-                  <!-- righe   to be looped -->
-                  <div class="mt-1 mb-3 d-flex justify-content-between" id="itemToShow">
-
-                    <div class=" p-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-x-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                      </svg>
-                    </div>
-
-                    <div class=" p-2">
-                      <img src="img/icon/almond.png" width="30px" height="30px" class="p-2 bd-highlight"
-                        style="background-color: grey;">
-                    </div>
-
-                    <div class="p-2">
-                      <input class="form-control me-2" type="search" value="broccoli " aria-label="Search">
-                    </div>
-
-                    <div class=" bd-highlight p-2">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    </div>
-
-                    <div class="p-2">
-                      <input class="form-control me-2" value="5 kg ">
-                    </div>
-
-                    <div class="p-2" style="width: 10%;">
-                      <input class="form-control me-2" value="3 ">
-                    </div>
-                  </div> <!-- end riga-->
-
-                </div><!-- end card-body -->
-              </div><!-- end card -->
-              <!-- end modification  -->
-            </div>
-            <div>
-              <!-- bottom of list add button and show total price -->
-              <div class="d-flex bd-highlight border-top ps-4 pe-4">
+                <div class="p-2" style="width: 20%;">
+                  <input class="form-control me-2" placeholder="prezzo ">
+                </div>
                 <div class="p-2 flex-grow-1 bd-highlight">
                   <button type="button" class="btn btn-success " id="addButton">Add +</button>
                 </div>
-                <div class="p-2 bd-highlight">Total price: </div>
-                <div class="p-2 bd-highlight"><span>50</span><span>£</span></div>
-              </div><!-- end  bottom of list add button and show total price -->
-            </div>
+              </div>
+              <div class="mt-1 mb-1 d-flex justify-content-end">
+                <div class="p-2 bd-highlight">Total price: £ </div>
+                <input class="form-control me-2" value="50 " style="width: 10%; border: 0ch;">
+              </div> <!-- mt-1 mb-1 d-flex justify-content-end-->
+            </div><!-- end card-header  d-flex justify-content-between-->
+            <div class=" d-flex justify-content-between border-bottom" style="width: 95%; margin:0 auto;">
+              <div class=""></div>
+              <div class=""></div>
+              <div class="ps-3">Product</div>
+              <div class="" style="width: 10%; text-align: center;">Add to cart</div>
+              <div class="">quantity</div>
+              <div class="">price</div>
+            </div><!--  end  d-flex justify-content-between border-bottom-->
+
+
+          </div> <!-- modal head-->
+          <div class="modal-body">
+            <div class="card-body ">
+
+              <!-- description of items -->
+              <div class="mt-1 mb-3 " data-bs-spy="scroll" id="createItemToAdd">
+
+
+                <!-- righe   to be looped -->
+                <div class="mt-1 mb-3 d-flex justify-content-between" id="itemToShow">
+
+                  <div class=" p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-x-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                      <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                  </div>
+
+                  <div class=" p-2">
+                    <img src="img/icon/almond.png" width="30px" height="30px" class="p-2 bd-highlight"
+                      style="background-color: grey;">
+                  </div>
+
+                  <div class="p-2">
+                    <p>mandorle</p>
+                  </div>
+
+                  <div class=" bd-highlight p-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  </div>
+
+                  <div class="p-2">
+                    <p>5kg</p>
+                  </div>
+
+                  <div class="p-2" style="width: 10%;">
+                    <p>3</p>
+                  </div>
+                </div> <!-- end righa-->
+
+
+
+
+              </div><!-- end card-body -->
+            </div><!-- end card -->
+
           </div>
+          <!-- end modification  -->
+        </div>
+        <div>
         </div>
       </div>
+    </div>
     </div>
 
   </section>

@@ -32,7 +32,7 @@ $(document).ready(function () {
           let lista = ordini[i];
           console.log(lista); //debug
           let ordine = ordineHeader(i, lista[0].titolo);
-          let item;
+         // let items = lista[0];
           for (item of lista.slice(0, 3)) {
             ordine += ` 
                 <div class="d-flex justify-content-center ">
