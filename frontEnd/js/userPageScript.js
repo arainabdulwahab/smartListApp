@@ -32,6 +32,7 @@ $(document).ready(function () {
           let lista = ordini[i];
           console.log(lista); //debug
           let ordine = ordineHeader(i, lista[0].titolo);
+          let item;
           for (item of lista.slice(0, 3)) {
             ordine += ` 
                 <div class="d-flex justify-content-center ">
@@ -79,13 +80,15 @@ $(document).ready(function () {
     JWTHeader = updateHeader();
   });
 
+ 
+
   // Gestione sfondo ordine
   $(document).on('click', '.color-ordine', function (event) {
     selectedColor = $(event.target);
-    let color = selectedColor.attr("data-sfondo");
-    let ordine = selectedColor.attr("data-ordine") + 1;
+    let idSfondo = selectedColor.attr("data-sfondo");
+    let ordine = parseInt(selectedColor.attr("data-ordine") + 1);
     let params = {
-      color: color
+      idSfondo: idSfondo
     }
     let jsonParams = JSON.stringify(params);
     console.log(jsonParams); //debug
@@ -102,38 +105,8 @@ $(document).ready(function () {
         alert('qualcosa non ha funzionato');
       }
     });
-
   });
+});
 
-}); /* end $(document).ready */
+/* end $(document).ready */
 
-
-/*
-    //ordine += ordineUlDuplicate(i);
-    //let cartItems = Object.entries(cart.items);
-    // for (let result of cart.items.slice(0,3)) {  // limit array range
-    //   let countItem = 0;
-    //   if (countItem < cart.items.length) {
-
-    //     //     countItem++;
-    //           let checked = 'unchecked';
-    //           if (cart.spunta) {
-    //             checked = 'checked';
-    //           }
-    //           ordine += ` 
-    //         <div class="d-flex justify-content-center ">
-    //           <img src="${cart.img}" width="30px" height="30px"
-    //             class="p-2 bd-highlight" style="background-color: grey;">
-    //           <p class="p-2 flex-grow-1 bd-highlight">${cart.genere}</p>
-    //           <input class="form-check-input mt-2" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
-    //             value="option1" disabled  ${checked}>
-    //         </div> <!-- end --> `;
-
-    //       //}
-    //  // } // end for(itemList of cart.items)
-    //     ordineList[i] = {
-    //       id: cart.idOrdine,
-    //       titolo: cart.titolo //,
-    //item: cart.items
-    //} // end   ordineList[i]
-*/
