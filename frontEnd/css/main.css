@@ -1,6 +1,7 @@
 body {
-  font-weight: bold;
+  font-weight: 400;
   font-family: 'Montserrat', sans-serif;
+  font-size: medium;
 }
 
 .loginBackground {
@@ -13,6 +14,10 @@ body {
 
 #mainLogo {
   margin-top: -15px;
+}
+
+.paragrafo {
+  font-size:medium;
 }
 
 .signUp {
