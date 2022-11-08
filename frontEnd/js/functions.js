@@ -96,12 +96,12 @@ function ricettes(i, recipe) {
   let ricetteCon = `  
      <!-- single container-->
     <div class="card bg-white shadow-lg p-0 m-1 bg-body rounded responsiveRecipe">
-        <div class="  border border-0">
+        <div class=" border border-0">
             <div class="p-1 mb-1  text-white position-absolute top-0 end-0 " >
                 <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox">
                     <div class="p-2 bd-highlight ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                            class="bi bi-clock " viewBox="0 0 16 16">
+                            class="bi bi-clock " viewBox="0 0 20 15">
                             <path
                                 d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
                             <path
@@ -116,14 +116,14 @@ function ricettes(i, recipe) {
             <div class="card-body m-0 p-0 mb-4">
                 <div class="card-header d-flex justify-content-between bg-body border-0 ">
 
-                    <div class="p-1 m-0 p-1 bd-highlight">
-                        <p class="p-1 ps-2 pe-2 mb-0 bg-danger text-white rounded text-center ">${recipe.tipo}</p>
+                    <div class="p-1 m-0 p-1 bd-highlight" id="riquadroRicetta">
+                         <p class="p-1 ps-2 pe-2 mb-0 text-white rounded text-center" style="background-color: #d93e3e">${recipe.tipo}</p>
                     </div>`;
   let tags = recipe.categorie;
   for (tagd of tags.slice(0, 2)) {
     ricetteCon += `
                             <div class="pt-2 p-1   bd-highlight inline-flex">
-                                <p class="p-1 mb-0 ps-2 pe-2 bg-primary text-white rounded " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
+                            <p class="p-1 mb-0 ps-2 pe-2 text-white rounded" style="background-color: #1985d9;" id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
                             </div>
                             ` };
   ricetteCon += `
