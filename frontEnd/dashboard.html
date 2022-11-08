@@ -27,10 +27,10 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="img/logo/logo.png" alt="" width="120px" height="30px">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light shadow-lg" id="mainNavBar">
+      <div class="container-fluid align-items-center">
+        <a class="navbar-brand ms-3 mt-3" href="index.html";>
+            <img src="img/logo/logo.png" alt="SmartCart" width="150px" height="40px" id="mainLogo">
         </a>
 
         <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -127,7 +127,7 @@
     </nav>
   </header>
 
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top: 10vh";>
     <div class="row">
       <nav id="sidebarMenu" class="col-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
@@ -195,17 +195,18 @@
     </div>
 
 
-
-
-  </div>
-    <footer>
-      <div class="container">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          </ul>
-          <p class="text-center text-muted">© 2022 Company, Inc</p>
-        </footer>
+    <footer class="text-white text-center text-lg-start bg-dark fixed-bottom">
+      <!-- Grid container -->
+     
+        <!--Grid row-->
       </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 SmartCart - Made with ♥ from Ravagers Team.
+      </div>
+      <!-- Copyright -->
     </footer>
 
 
