@@ -32,6 +32,10 @@ body {
 .smallScreenDisplay{
   display: none;
 }
+
+.bgList1{
+  background-image: url("img/wallpaper/wallpaper_liste/wallpaper-list-1.webp");
+}
 @media screen and (min-width: 800px) {
 
   .signUp {

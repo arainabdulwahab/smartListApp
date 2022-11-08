@@ -32,7 +32,7 @@ $(document).ready(function () {
           let lista = ordini[i];
           console.log(lista); //debug
           let ordine = ordineHeader(i, lista[0].titolo);
-         // let items = lista[0];
+          // let items = lista[0];
           for (item of lista.slice(0, 3)) {
             ordine += ` 
                 <div class="d-flex justify-content-center ">
@@ -50,10 +50,10 @@ $(document).ready(function () {
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
           ordine += ordineEnd();
-          ordine += updateModal(i, item);
+          //ordine += updateModal(i, item);
           ordine += colorModal(i);
           ordine += sfondoModal(i);
-          ordine += shareBtnModal(i);
+          //ordine += shareBtnModal(i);
           $("#displayCloneList").append(ordine); // display ordine
         } /* end for esterno */
       } /* end success */
@@ -80,13 +80,13 @@ $(document).ready(function () {
     JWTHeader = updateHeader();
   });
 
- 
+
 
   // Gestione sfondo ordine
   $(document).on('click', '.color-ordine', function (event) {
-    selectedColor = $(event.target);
-    let idSfondo = selectedColor.attr("data-sfondo");
-    let ordine = parseInt(selectedColor.attr("data-ordine") + 1);
+    selectedImage = $(event.target);
+    let idSfondo = selectedImage.attr("data-sfondo");
+    let ordine = parseInt(selectedImage.attr("data-ordine") + 1);
     let params = {
       idSfondo: idSfondo
     }
@@ -100,13 +100,25 @@ $(document).ready(function () {
       data: jsonParams,
       success: function (response) {
         alert('colore sfondo cambiato');
+        let id = '#cloneList' + selectedImage.attr('data-ordine');
+        let selector = id + ' div';
+        let filename = 'img/wallpaper/wallpaper_liste/wallpaper-list-' + idSfondo + '.webp';
+        $(selector).css('background-image', 'url(' + filename + ')');
+
+
+
+
       },
       error: function (response) {
         alert('qualcosa non ha funzionato');
       }
-    });
+    })
+
   });
 });
+
+
+
 
 /* end $(document).ready */
 

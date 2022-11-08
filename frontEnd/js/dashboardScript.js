@@ -3,6 +3,7 @@ $(document).ready(function () {
 let JWTHeader = {
     Authorization: 'Bearer ' + $.cookie('jwt')
   };
+  
     $("#showProduct").click(function () {
         $.get('http://localhost:8080/api/prodotti', function (response) {
             console.log(response); //debug
