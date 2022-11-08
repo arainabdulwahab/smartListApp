@@ -26,13 +26,12 @@
 
 <body class="loginBackground">
     <header>
-
-        <nav class="navbar navbar-expand-lg bg-light shadow-lg" id="mainNavBar">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg fixed-top bg-light shadow-lg" id="mainNavBar">
+            <div class="container-fluid align-items-center">
                 <a class="navbar-brand ms-3 mt-3" href="index.html">
-                    <img src="img/logo/logo.png" alt="" width="120px" height="30px">
+                    <img src="img/logo/logo.png" alt="SmartCart" width="150px" height="40px" id="mainLogo">
                 </a>
-                <button type="button" class="btn btn-danger shadow-lg p-3 me-5 mt-3 rounded" data-bs-toggle="modal"
+                <button type="button" class="btn btn-danger shadow-lg p-2 me-3 mt-1 rounded" data-bs-toggle="modal"
                     data-bs-target="#exampleModal"> Sign Up</button>
                 </button>
             </div>
@@ -40,8 +39,6 @@
     </header>
     <section class="container">
         <div class="container-lg  mt-2">
-
-            <!--  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, sint doloremque. Repudiandae possimus quae fugiat quibusdam! Aut eius soluta voluptatum nesciunt, at ipsa deserunt quod, repellat impedit assumenda dicta non!</p>-->
             <div class="row d-flex align-items-center justify-content-center h-100">
                 <div class="col-lg-4 mb-2 fs-5 lh-base">
 
@@ -50,7 +47,7 @@
                     </ul>
                     
                     <p>Welcome to SmartCart: a brand new way to improve your experience of shopping!</p> 
-                    <p>You are just one step away from using our amazing features developed just for you: register using the form on the right or just log-in now! </p>
+                    <p>You are just one step away from using our amazing features developed just for you: login using the form on the right or just apply your registration now! </p>
                 </div>
                 <div class="col-lg-2"></div>
                 <div class="signUp shadow-lg col-lg-6 p-3 mb-5 bg-body rounded">
@@ -82,7 +79,7 @@
                         <!-- Submit button -->
                         <button type="submit"
                             class="btn btn-primary btn-lg btn-block p-2 mt-4 mb-4 shadow-lg p-3 mb-5 rounded"
-                            style="width: 100%; font-weight: bold; font-size: large;" id="loginBtnForuser">Register now!</button>
+                            style="width: 100%; font-weight: bold; font-size: large;" id="loginBtnForuser">Login</button>
 
                     </form>
                 </div>
@@ -146,15 +143,24 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <footer class="py-3 my-4" id="mainFooter">
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                </ul>
-                <p class="text-center text-muted">© 2022 SmartCart - Made with ♥ from Ravagers Team.</p>
-            </footer>
-        </div>
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+
+    <footer class="text-white text-center text-lg-start bg-dark fixed-bottom">
+      <!-- Grid container -->
+     
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 SmartCart - Made with ♥ from Ravagers Team.
+      </div>
+      <!-- Copyright -->
     </footer>
+  
+  <!-- End of .container -->
 
 </body>
 
