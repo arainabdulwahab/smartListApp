@@ -4,14 +4,16 @@ body {
 }
 
 .loginBackground {
-  background-image: url("../img/wallpaper/backgroundImageLogin.webp");
+  background-image: url("../img/wallpaper/backgroundimagelogin_alt.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.902;
 }
 
-
+#mainLogo {
+  margin-top: -15px;
+}
 
 #mainFooter {
   
