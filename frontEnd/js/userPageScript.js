@@ -50,10 +50,10 @@ $(document).ready(function () {
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
           ordine += ordineEnd();
-          ordine += colorModal(i);
           ordine += sfondoModal(i);
+          ordine += coloreModal(i);
           ordine += shareBtnModal(i);
-          ordine += updateModal(i, item);
+          //ordine += updateModal(i, item);
           $("#displayCloneList").append(ordine); // display ordine
         } /* end for esterno */
       } /* end success */

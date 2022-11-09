@@ -398,21 +398,6 @@ function updateModalFooter() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function ordineEnd() {
   return `
       </div >
@@ -424,49 +409,10 @@ function ordineEnd() {
     `;
 } // end ordineCenter ()
 
-/********* Funzioni colori liste (color carts) **********/
-/*
-function colorModal(i, cart) {
-    let colorModal = ` <!--modal color-- >
-    <div class="modal fade" id="exampleModalColor${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Chose a color</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="d-flex justify-content-start text-center">
-              <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#D88D8C;" onclick="D88D8C(${cart.idOrdine})"></div>
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#96D9B8;" onclick="96D9B8(${cart.idOrdine})"></div>
-              </div>
-              <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#D9AF77;" onclick="D9AF77(${cart.idOrdine})"></div>
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#ADD3D9;" onclick="ADD3D9(${cart.idOrdine})"></div>
-              </div>
-              <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#9EACD9;" onclick="9EACD9(${cart.idOrdine})"></div>
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#D9B6D3;" onclick="D9B6D3(${cart.idOrdine})"></div>
-              </div>
-              <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#B5D877;" onclick="B5D877(${cart.idOrdine})"></div>
-                <div class="rounded-circle m-1" style="width: 50px; height: 50px; background-color:#D9C775;" onclick="D9C775(${cart.idOrdine})"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-    return colorModal;
-} 
-
-*/
 
 //funzione riproposta colore liste
-function colorModal(i) {
-  return ` <!--modal color-- >
-    <div class="modal fade" id="exampleModalColor${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+function coloreModal(i) {
+  return `   <div class="modal fade" id="exampleModalColor${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -515,20 +461,42 @@ function sfondoModal(i) {
           <div class="modal-body">
             <div class="d-flex justify-content-start text-center">
               <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#D88D8C;" data-sfondo="1" data-ordine="${i}"></div>
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#96D9B8;" data-sfondo="2" data-ordine="${i}"></div>
+                <div class="rounded-circle m-1 color-ordine" data-sfondo="1" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-1.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                </div>
+                <div class="rounded-circle m-1 color-ordine"" data-sfondo="2" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-2.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                </div>
               </div>
               <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#D9AF77;" data-sfondo="3" data-ordine="${i}"></div>
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#ADD3D9;" data-sfondo="4" data-ordine="${i}"></div>
+                <div class="rounded-circle m-1 color-ordine"  data-sfondo="3" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-3.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                
+                </div>
+                <div class="rounded-circle m-1 color-ordine"  data-sfondo="4" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-4.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                
+                </div>
               </div>
               <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#9EACD9;" data-sfondo="5" data-ordine="${i}"></div>
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px             ; background-color:#D9B6D3;" data-sfondo="6" data-ordine="${i}"></div>
+                <div class="rounded-circle m-1 color-ordine"  data-sfondo="5" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-5.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                
+                </div>
+                <div class="rounded-circle m-1 color-ordine" data-sfondo="6" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-6.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                
+                </div>
               </div>
               <div class="d-inline m-1 p-1">
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#B5D877;" data-sfondo="7" data-ordine="${i}"></div>
-                <div class="rounded-circle m-1 color-ordine" style="width: 50px; height: 50px; background-color:#D9C775;" data-sfondo="8" data-ordine="${i}"></div>
+                <div class="rounded-circle m-1 color-ordine"  data-sfondo="7" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-7.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                
+                </div>
+                <div class="rounded-circle m-1 color-ordine" data-sfondo="8" data-ordine="${i}">
+                  <img src="img/wallpaper/wallpaper_liste/wallpaper-list-8.webp" alt="wallpaper-list-1.webp" width="50px" height="50px" style="border-radius:50%">
+                
+                </div>
               </div>
             </div> <!-- END flex -->
           </div> <!-- END BODY -->
