@@ -25,7 +25,7 @@
   <!-- CUSTOM SCRIPT -->
   <script src="js/functions.js"></script>
   <script src="js/userPageScript.js"></script>
-  <script src="js/searchScript.js"></script>
+  <script src="js/searchScript.js" defer></script>
 
 </head>
 
@@ -164,7 +164,7 @@
                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                 </svg>
                 <div class="pt-2 ">
-                  <input class="form-control me-2" type="search" value="giorno di oggi " aria-label="Search">
+                  <input class="form-control me-2" type="text" value="giorno di oggi " aria-label="Search">
 
                 </div> <!-- end pt-2-->
                 <div class="btn-group dropstart">
@@ -222,9 +222,8 @@
               <div class="searchItem mt-1 mb-3 d-flex justify-content-between">
 
                 <div class="p-2">
-                  <input class="form-control me-2" type="search" placeholder="prodotto " aria-label="Search" id="prodottoSearch">
+                  <input class="form-control me-2" type="search" placeholder="prodotto " id="prodottoSearch">
                 </div>
-
                 <div class="p-2">
                   <input class="form-control me-2" placeholder="Quantita ">
                 </div>
@@ -236,6 +235,8 @@
                   <button type="button" class="btn btn-success " id="addButton">Add +</button>
                 </div>
               </div>
+              
+              <div id="match-list">ss</div>
               <div class="mt-1 mb-1 d-flex justify-content-end">
                 <div class="p-2 bd-highlight">Total price: £ </div>
                 <input class="form-control me-2" value="50 " style="width: 10%; border: 0ch;">
