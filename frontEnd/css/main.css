@@ -36,6 +36,23 @@ body {
 .bgList1{
   background-image: url("img/wallpaper/wallpaper_liste/wallpaper-list-1.webp");
 }
+
+
+  
+#wrapper {
+  width:500px;
+  margin:0 auto;
+  margin-top:40px;
+}
+#fileDropBox {
+  margin-left:100px;
+  width: 20em;
+  line-height: 10em;
+  border: 1px dashed gray;
+  text-align: center;
+  color: gray;
+  border-radius: 7px;
+}
 @media screen and (min-width: 800px) {
 
   .signUp {
