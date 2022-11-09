@@ -95,7 +95,7 @@ function ordineHeader(i, titoloCart) {
 function ricettes(i, recipe) {
   let ricetteCon = `  
      <!-- single container-->
-    <div class="card bg-white shadow-lg p-0 m-1 bg-body rounded responsiveRecipe ">
+    <div class="card bg-white shadow-lg p-0 m-1 mb-5 bg-body rounded responsiveRecipe ">
         <div class=" border border-0">
             <div class="p-1 mb-1  text-white position-absolute top-0 end-0 " >
                 <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox opacity-75">
@@ -124,7 +124,7 @@ function ricettes(i, recipe) {
   let tags = recipe.categorie;
   for (tagd of tags.slice(0, 2)) {
     ricetteCon += `
-                            <div class="pt-2    bd-highlight ">
+                            <div class="pt-2 bd-highlight ">
                             <p class=" mb-0 ps-2 pe-2 text-white rounded" style="background-color: #1985d9; " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
                             </div>
                             ` };
@@ -136,6 +136,7 @@ function ricettes(i, recipe) {
             </div>
         </div>
     </div> <!-- card end -->`;
+
   return ricetteCon;
 }
 
