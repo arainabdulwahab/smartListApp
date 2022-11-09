@@ -1,23 +1,203 @@
+function updateHeader() {
+  return {
+    Authorization: 'Bearer ' + $.cookie('jwt')
+  };
+}
+$(document).ready(function(){
+  $.getJSON('http://localhost:8080/api/prodotti', function (data){
 
-const inputAdd = document.getElementById('createItemToAdd');
-const addButton = document.getElementById('addButton');
+    console.log(data);
+  });
+  
+})
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const inputAdd = document.getElementById('createItemToAdd');
+// const addButton = document.getElementById('addButton');
+// const searchProdottoBar = document.getElementById('prodottoSearch');
+
+// // const searchStates = async searchText => {
+// //   const res = await fetch('http://localhost:8080/api/prodotti');
+// //   const states = await res.json();
+// //   console.log(states);
+// // }
+
+// // let matches = states.filter(state => {
+// //   const regex = new RegExp(`⌃${searchText}`, 'gi');
+
+// // });
+
+
+
+// searchProdottoBar.addEventListener('input', () => searchStates(search.value));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let prodotto =[];
 $(document).ready(function () {
     
-  $("#createProductWithItem").click(function() {
+  $("#prodottoSearch").click(function() {
         
     $.get('http://localhost:8080/api/prodotti', function (response) {
         // stringifyJson = JSON.stringify(response);
         // let parseJson = JSON.parse(stringifyJson);
 
-        console.log(parseJson);
+        console.log(response);
     });
     });
 });
 
 
-/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let mainContainer = document.createElement('div');
 mainContainer.className = '';

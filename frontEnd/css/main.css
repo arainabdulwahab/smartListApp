@@ -37,6 +37,9 @@ body {
   background-image: url("img/wallpaper/wallpaper_liste/wallpaper-list-1.webp");
 }
 
+.listItemHover:hover{
+  background-color: rgba(201, 203, 206, 0.057);
+}
 
   
 #wrapper {

@@ -27,15 +27,15 @@ $(document).ready(function () {
       type: "POST",
       data: jsonParams,
       success: function (ordini) {
-        console.log(ordini); //debug
+        //console.log(ordini); //debug
         for (let i = 0; i < ordini.length; i++) {
           let lista = ordini[i];
-          console.log(lista); //debug
+          //console.log(lista); //debug
           let ordine = ordineHeader(i, lista[0].titolo);
           // let items = lista[0];
           for (item of lista.slice(0, 3)) {
             ordine += ` 
-                <div class="d-flex justify-content-center ">
+                <div class="d-flex justify-content-center listItemHover">
                   <img src="${item.img}" width="35px" height="35px"
                     class="p-2 bd-highlight" style="background-color: #f2f2f2;">
                   <p class="p-2 flex-grow-1 bd-highlight">${item.genere}</p>
@@ -49,6 +49,11 @@ $(document).ready(function () {
 
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
+          ordine +=   `<div class="text-center p-0 m-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                        </svg>
+                      </div> `,
           ordine += ordineEnd();
           ordine += sfondoModal(i);
           ordine += coloreModal(i);
