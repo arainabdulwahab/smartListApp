@@ -125,7 +125,7 @@ function ricettes(i, recipe) {
   for (tagd of tags.slice(0, 2)) {
     ricetteCon += `
                             <div class="pt-2 bd-highlight ">
-                            <p class=" mb-0 ps-2 pe-2 text-white rounded" style="background-color: #1985d9; " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
+                            <p class=" mb-0 ms-2 ps-2 pe-2 text-white rounded" style="background-color: #1985d9; " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
                             </div>
                             ` };
   ricetteCon += `
