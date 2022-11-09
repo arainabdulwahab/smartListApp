@@ -8,16 +8,40 @@ function updateHeader() {
 
 
 
-
-const search = document.getElementById('prodottoSearch');
-const matchList = document.getElementById('match-list');
-const searchState = async searchText => {
-  const res = await fetch('http://localhost:8080/api/prodotti');
-  const states = await res.json();
-  console.log(states);
+//⌃
+let createBtn = document.getElementById('buttonCreate');
+let search = document.getElementById('prodottoSearch');
+let matchList = document.getElementById('match-list');
+let  searchStates = async searchText => {
+  let res = await fetch('http://localhost:8080/api/prodotti');
+  //console.log(res);
+  let states = await res.json();
+ //console.log(states);
+  let matches = states.filter(state => {
+    let regex = new RegExp(`${searchText}`, 'gi');
+    return state.genere.match(regex) ;
+  });
+  console.log(matches);
+  if(searchText.length === 0 ){
+    matches = [];
+    matchList.innerHTML = '';
+  }
+    outputHTML(matches);
+};
+let outputHTML = matches =>{
+  if(matches.length > 0 ){
+    let html = matches.map(match => `
+    <div class="card card-body mb-1" >
+      <img src="${match.immagine}" width="40px" height="40px">
+      <h6>${match.genere}</h6>
+    </div>
+    `)
+    .join('');
+    matchList.innerHTML = html;
+  }
 }
-search.addEventListener('input', () => searchState(search.value));
-
+search.addEventListener('keyup', () => searchStates(search.value));
+console.log(search)
 
 
 

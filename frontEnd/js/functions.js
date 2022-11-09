@@ -234,7 +234,7 @@ function updateModal(i, lista) {
     updateModals = updateModalHeader(i, lista);
     for(item of lista){ 
     updateModals += updateModalProdottiLoop(item);
-    console.log(item);
+    //console.log(item);
     }
     updateModals += updateModalFooter();
 
