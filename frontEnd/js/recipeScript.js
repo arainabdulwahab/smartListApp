@@ -35,7 +35,7 @@ $(document).ready(function () {
                     nome: recipe.nome,
                     prodotti: recipe.prodotti
                 };
-                console.log(ricette); //debug
+                console.log(response); //debug
             } /* end for of */
             $("#recipeContent").append(ricette);
         }

@@ -95,7 +95,7 @@ function ordineHeader(i, titoloCart) {
 function ricettes(i, recipe) {
   let ricetteCon = `  
      <!-- single container-->
-    <div class="card bg-white shadow-lg p-0 m-1 bg-body rounded responsiveRecipe">
+    <div class="card bg-white shadow-lg p-0 m-1 bg-body rounded responsiveRecipe ">
         <div class=" border border-0">
             <div class="p-1 mb-1  text-white position-absolute top-0 end-0 " >
                 <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox opacity-75">
@@ -108,7 +108,7 @@ function ricettes(i, recipe) {
                                 d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                         </svg>
                     </div>
-                    <p class="pt-2 bd-highlight" style="padding-right: 1vw; margin-top: 0.5vh; font-size: small;">60 min</p>
+                    <p class="pt-2 bd-highlight" style="padding-right: 1vw; margin-top: 0.5vh; font-size: small;">${recipe.tempo}min</p>
                 </div>
             </div>
             <img src="${recipe.immagine}" class="card-img-top" alt="..."
@@ -116,19 +116,21 @@ function ricettes(i, recipe) {
             <div class="card-body m-0 p-0 mb-4">
                 <div class="card-header d-flex justify-content-between bg-body border-0 ">
 
-                    <div class="p-1 m-0 p-1 bd-highlight" id="riquadroRicetta">
-                         <p class="p-1 ps-2 pe-2 mb-0 text-white rounded text-center" style="background-color: #d93e3e">${recipe.tipo}</p>
+                    <div class="p-1 m-0 p-1 mt-1 flex-grow-1 bd-highlight" id="riquadroRicetta">
+                      <div class="bg-transparent"> 
+                          <a href="#" class="p-1 " style="background-color: #d93e3e; color:white; text-align:none; text-decoration: none; border-radius: 5px;">${recipe.tipo}</a>
+                         </div>
                     </div>`;
   let tags = recipe.categorie;
   for (tagd of tags.slice(0, 2)) {
     ricetteCon += `
-                            <div class="pt-2 p-1   bd-highlight inline-flex">
-                            <p class="p-1 mb-0 ps-2 pe-2 text-white rounded" style="background-color: #1985d9;" id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
+                            <div class="pt-2    bd-highlight ">
+                            <p class=" mb-0 ps-2 pe-2 text-white rounded" style="background-color: #1985d9; " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
                             </div>
                             ` };
   ricetteCon += `
                 </div>
-                <h5 class="card-title text-center" data-bs-toggle="modal"
+                <h5 class="p-2 card-title text-center text-truncate" data-bs-toggle="modal" style="font-size: large;"
                     data-bs-target="#staticBackdropRecipe${i}"> ${recipe.nome} </h5>
                 <!-- <p class="card-text">La pasta alla siciliana è un primo piatto super gustoso, di quelli che portano l'allegria in tavola! Nonostante il nome, la ricetta ha origini napoletane ed è definita così per la presenza delle melanzane, che richiamano la pasta alla Norma. </p> -->
             </div>
@@ -166,7 +168,7 @@ function ricetteModal(i, recipe) {
                                     </path>
                                 </svg>
                             </div>
-                            <p class="pt-2 ms-2 bd-highlight">60 min</p>
+                            <p class="pt-2 ms-2 bd-highlight">${recipe.tempo} min</p>
                         </div>
                     </div>
                     <img src="${recipe.immagine}"

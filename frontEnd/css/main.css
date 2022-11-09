@@ -25,10 +25,12 @@ body {
 }
 
 .responsiveRecipe {
-  width: 11rem;
+  width: 20rem;
   height: 80%;
 }
-
+#recipeContent{
+  justify-content: center;
+}
 .smallScreenDisplay{
   display: none;
 }
