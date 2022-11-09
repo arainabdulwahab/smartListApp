@@ -226,12 +226,13 @@ function importRicetta(i) {
 }
 
 
-function updateModal(i, item) {
+function updateModal(i, lista) {
     let updateModals = ` `;
-    updateModals = updateModalHeader(i, item);
-    for(prodotto of Object.entries(item)){ 
-    updateModals += updateModalProdottiLoop(prodotto);
-    console.log(prodotto);
+    let listaTitolo ;
+    updateModals = updateModalHeader(i, lista);
+    for(item of lista){ 
+    updateModals += updateModalProdottiLoop(item);
+    console.log(item);
     }
     updateModals += updateModalFooter();
 
@@ -240,7 +241,7 @@ return updateModals;
 }
 
 
-function updateModalHeader(i, item){
+function updateModalHeader(i, lista){
   return `
   <!-- create Modal  list -->
   <div class="modal fade modal-lg" id="staticBackdrop${i}" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -260,7 +261,7 @@ function updateModalHeader(i, item){
             d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
         </svg>
         <div class="pt-2 ">
-          <input class="form-control me-2" value="${item.titolo} " aria-label="Search" style="border:0; ">
+          <input class="form-control me-2" value="${lista[0].titolo} " aria-label="Search" style="border:0; ">
   
         </div>
         <div class="btn-group dropstart">
@@ -333,12 +334,12 @@ function updateModalHeader(i, item){
           </div>
         </div><!-- end description of items -->
         <!-- righe   to be looped -->
-        <div class="mt-1 mb-3 d-flex justify-content-between" id="createItemToAdd">
+        <div class="mt-1 mb-3 " >
         `;
 }
 /* update Modal loop item */
 
-function updateModalProdottiLoop(prodotto) {
+function updateModalProdottiLoop(item) {
 
   let items = `   
    <div class="mt-1 mb-3 d-flex justify-content-between" id = "itemToShow" >
@@ -350,23 +351,23 @@ function updateModalProdottiLoop(prodotto) {
     </div>
 
     <div class=" p-2">
-      <img src="${prodotto.img}" width="30px" height="30px" class="p-2 bd-highlight" style="background-color: grey;">
+      <img src="${item.img}" width="30px" height="30px" class="p-2 bd-highlight" style="background-color: grey;">
     </div>
 
-    <div class="p-2">
-      <p >${prodotto.genere} </p>
+    <div class="p-2" style="width: 50rem; ">
+      <p >${item.genere} </p>
     </div>
 
-    <div class=" bd-highlight p-2">
+    <div class=" bd-highlight p-2" >
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
     </div>
 
-    <div class="p-2">
-      <p > ${prodotto.quantita}</p>
+    <div class="p-2" style="width: 15rem; ">
+      <p > ${item.quantita}</p>
     </div>
 
     <div class="p-2">
-      <p > ${prodotto.prezzo}</p>
+      <p > ${item.prezzo}</p>
     </div>
   </div >
 
@@ -376,6 +377,7 @@ function updateModalProdottiLoop(prodotto) {
 
 function updateModalFooter() {
   return   ` 
+  </div>
    </div ><!--end card - body-- >
   </div ><!--end card-- >
   <!--end modification-- >

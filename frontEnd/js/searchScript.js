@@ -3,13 +3,62 @@ function updateHeader() {
     Authorization: 'Bearer ' + $.cookie('jwt')
   };
 }
-$(document).ready(function(){
-  $.getJSON('http://localhost:8080/api/prodotti', function (data){
 
-    console.log(data);
-  });
+
+
+
+
+
+const search = document.getElementById('prodottoSearch');
+const matchList = document.getElementById('match-list');
+const searchState = async searchText => {
+  const res = await fetch('http://localhost:8080/api/prodotti');
+  const states = await res.json();
+  console.log(states);
+}
+search.addEventListener('input', () => searchState(search.value));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(document).ready(function(){
+//   $('#prodottoSearch').keyup(function() {
+//     $('createItemToAdd').html('');
+//     let searchField = $('#prodottoSearch').val();
+//     let expression = new RegExp(searchField, 'i');
+//     $.getJSON('http://localhost:8080/api/prodotti', function (data){
+//       $.each(data, function(key, value){
+//         if(value.name.prodottoSearch(expression) != -1){
+//           console.log(value.genere);
+//         }
+//       });
+//     });
+//   });
   
-})
+// })
 
 
 
