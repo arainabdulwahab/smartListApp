@@ -15,6 +15,8 @@ let addButton = document.getElementById('addButton');
 let quantitaInput = document.getElementById('quantitaInput');
 let prezzoInput = document.getElementById('prezzoInput');
 let createItemToAdd = document.getElementById('createItemToAdd');
+let totalPrice = document.getElementById('totalPrice');
+
 
 let  searchStates = async searchText => {
   let res = await fetch('http://localhost:8080/api/prodotti');
@@ -98,9 +100,11 @@ let outputHTML = matches =>{
     </div> <!-- end righa-->`;
     testDiv.innerHTML = newDiv;
   
+  totalPrice.value = prezzoInput.value;
     createItemToAdd.append(testDiv);
   })
 }
+
 search.addEventListener('keyup', () => searchStates(search.value));
 console.log(search)
 
