@@ -99,7 +99,7 @@ function ricettes(i, recipe) {
         <div class=" border border-0">
             <div class="p-1 mb-1 text-white position-absolute top-0 end-0" >
                 <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox opacity-75">
-                    <div class="p-2 bd-highlight ">
+                    <div class="p-2 bd-highlight ms-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-clock " viewBox="0 0 20 15">
                             <path
@@ -148,17 +148,17 @@ function ricetteModal(i, recipe) {
         <div class="modal-dialog" >
             <div class="modal-content">
                 <div class="modal-body m-0 p-0">
-                    <div class="p-3 mb-2  text-white position-absolute top-0 start-0  " style="width: 30%">
-                        <div class="d-flex flex-row bd-highlight mb-0 ">
+                    <div class="p-3 mb-2  text-white position-absolute top-0 start-0" style="width: 30%">
+                        <div class="d-flex flex-row bd-highlight mb-0">
                             <div style="width:50%; margin:0; position: absolute; ">
                                 <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                         </div>
                     </div>
-                    <div class="p-3 mb-2  text-white position-absolute top-0 end-0 " style="width: 20%">
-                        <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded">
-                            <div class="p-1 bd-highlight ms-3">
+                    <div class="p-3 mb-2 text-white position-absolute top-0 end-0">
+                        <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox opacity-75">
+                            <div class="p-1 bd-highlight ms-3 mt-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-clock " viewBox="0 0 16 16">
                                     <path
@@ -169,7 +169,7 @@ function ricetteModal(i, recipe) {
                                     </path>
                                 </svg>
                             </div>
-                            <p class="pt-2 ms-2 bd-highlight">${recipe.tempo} min</p>
+                            <p class="pt-2 bd-highlight" style="padding-right: 1vw; margin-top: 0.5vh; font-size: small;">${recipe.tempo}min</p>
                         </div>
                     </div>
                     <img src="${recipe.immagine}"
@@ -197,11 +197,11 @@ function ricetteModal(i, recipe) {
                     `;
   let prodotti = recipe.prodotti;
   for (prod of prodotti) {
-    ricettaModal += ` <div class="d-flex justify-content-between" style="width:100%";>
-                                    <img src="${prod.immagine}" width="30px" height="30px"
-                                        class="p-2 bd-highlight" style="background-color: grey;">
+    ricettaModal += ` <div class="d-flex justify-content-between ms-2" style="width:100%";>
+                                    <img src="${prod.immagine}" width="40vw" height="40vh"
+                                        class="p-2 bd-highlight" style="background-color: #f2f2f2;">
                                     <p class="p-2 flex-grow-1 bd-highlight">${prod.genere}</p>
-                                    <p class="p-2 bd-highlight">2kg</p>
+                                    <p class="p-2 bd-highlight me-2">2kg</p>
                                 </div> <!-- end -->`;
 
   }
