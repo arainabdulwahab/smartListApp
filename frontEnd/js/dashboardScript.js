@@ -118,3 +118,29 @@ function prodottiShow(singoloProdotto) {
   </div>
 `;
 }
+let showProductBtn = document.getElementById('showProduct');
+let showAllUserBtn = document.getElementById('showAllUser');
+let showWallpaperBtn = document.getElementById('showWallpaper');
+let createRecipeBtn = document.getElementById('createRecipe');
+
+let showCreateRecipe = document.getElementById('showCreateRecipe');
+let showProdotti = document.getElementById('showProdotti');
+let showUser = document.getElementById('showUser');
+let ShowWallp = document.getElementById('ShowWallp');
+
+showAllUserBtn.addEventListener('click', function(){
+    showProdotti.style.display = 'none';
+    ShowWallp.style.display = 'none';
+    showCreateRecipe.style.display = 'none';
+    showAllUserBtn.style.display = 'block';
+});
+
+
+showProductBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  showProdotti.style.display = 'block';
+  showUser.style.display = 'none';
+
+});
+
+
