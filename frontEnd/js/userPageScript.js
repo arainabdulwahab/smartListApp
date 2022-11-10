@@ -35,11 +35,11 @@ $(document).ready(function () {
           // let items = lista[0];
           for (item of lista.slice(0, 3)) {
             ordine += ` 
-                <div class="d-flex justify-content-center listItemHover">
+                <div class="d-flex justify-content-center">
                   <img src="${item.img}" width="35px" height="35px"
-                    class="p-2 bd-highlight" style="background-color: #f2f2f2;">
-                  <p class="p-2 flex-grow-1 bd-highlight">${item.genere}</p>
-                  <input class="form-check-input mt-2" type="checkbox" name="inlineChe kOptions" id="inlineCheckId"
+                    class="p-2 bd-highlight listItemHover" style="background-color: #f2f2f2;">
+                  <p class="p-2 flex-grow-1 bd-highlight  listItemHover">${item.genere}</p>
+                  <input class="form-check-input mt-2 listItemHover" type="checkbox" name="inlineChe kOptions" id="inlineCheckId"
                     value="option1"`;
             if (item.spunta == 1) {
               ordine += ` checked disabled`;
@@ -50,9 +50,11 @@ $(document).ready(function () {
             /******* qui bisogna estrarre il colore impostato dall'utente */
           } /* end for interno */
           ordine +=   `<div class="text-center p-0 m-0">
+                        <div class="rotateDots">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                           <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
                         </svg>
+                        </div>
                       </div> `;
           ordine += ordineEnd();
           ordine += sfondoModal(i);

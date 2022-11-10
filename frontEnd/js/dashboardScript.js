@@ -134,6 +134,10 @@ showAllUserBtn.addEventListener('click', function(){
     ShowWallp.style.display = 'none';
     showCreateRecipe.style.display = 'none';
     showUser.style.display = 'block';
+    showAllUserBtn.classList.add('dashActive');
+    showWallpaperBtn.classList.remove('dashActive');
+    createRecipeBtn.classList.remove('dashActive');
+    showProductBtn.classList.remove('dashActive');
 });
 
 
@@ -143,6 +147,10 @@ showProductBtn.addEventListener('click', function(){
   ShowWallp.style.display = 'none';
   showCreateRecipe.style.display = 'none';
   showUser.style.display = 'none';
+  showProductBtn.classList.add('dashActive');
+  showAllUserBtn.classList.remove('dashActive');
+  showWallpaperBtn.classList.remove('dashActive');
+  createRecipeBtn.classList.remove('dashActive');
 
 });
 
@@ -151,6 +159,10 @@ showWallpaperBtn.addEventListener('click', function(){
   ShowWallp.style.display = 'block';
   showCreateRecipe.style.display = 'none';
   showUser.style.display = 'none';
+  showWallpaperBtn.classList.add('dashActive');
+  showAllUserBtn.classList.remove('dashActive');
+  showProductBtn.classList.remove('dashActive');
+  createRecipeBtn.classList.remove('dashActive');
   
 });
 
@@ -160,4 +172,8 @@ createRecipeBtn.addEventListener('click', function(){
   ShowWallp.style.display = 'none';
   showCreateRecipe.style.display = 'block';
   showUser.style.display = 'none';
+  createRecipeBtn.classList.add('dashActive');
+  showWallpaperBtn.classList.remove('dashActive');
+  showProductBtn.classList.remove('dashActive');
+  showAllUserBtn.classList.remove('dashActive');
 });

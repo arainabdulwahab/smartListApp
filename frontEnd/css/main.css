@@ -51,11 +51,37 @@ body {
 .bgList1{
   background-image: url("img/wallpaper/wallpaper_liste/wallpaper-list-1.webp");
 }
-
+.rotateDots:hover{
+  animation-name: rotateDot;
+  animation-duration: 4s;
+}
+@keyframes rotateDot {
+  from {
+    transform: rotate(0deg);}
+  to {
+    transform: rotate(360deg);}
+}
 .listItemHover:hover{
-  background-color: rgba(201, 203, 206, 0.057);
+  box-shadow: 0 0 5px #acc0ea5a;
+  transition-timing-function: ease-in-out;
+  
 }
 
+.ordineHover:hover{
+  box-shadow: 0 0 20px #143c915a;
+}
+.cancelButton:hover{
+  background-color: rgba(255, 59, 59, 0.484);
+  color: white;
+}
+.dashActive{
+  background-color: rgba(149, 250, 216, 0.607);
+  border-radius: 5px;
+}
+.dashActive:hover{ 
+  box-shadow:  0 0 5px 1px rgba(20, 239, 151, 0.507);
+
+}
   
 #wrapper {
   width:500px;

@@ -24,17 +24,17 @@ function extractPayload(token) {
 function ordineHeader(i, titoloCart) {
   return `
         <!-- single container-->
-        <div class="col d-flex align-items-stretch bg-transparent" id="cloneList${i}">
+        <div class="col d-flex align-items-stretch bg-transparent " id="cloneList${i}">
           <div class="card border border-0 bg-transparent" style="width: 30rem;">
             <!-- Example split danger button -->
-            <div class="card mb-4" id="backImg">
+            <div class="card mb-4 ordineHover" id="backImg">
               <!-- main to manipulate  -->
               <div class="card-header d-flex justify-content-between">
                 <div class="pt-2 ">${titoloCart}</div>
                 <div class="btn-group dropstart">
-                  <button class="btn border border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn border border-0 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                      class="bi bi-three-dots-vertical " viewBox="0 0 16 16">
                       <path
                         d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
                     </svg>
@@ -75,7 +75,7 @@ function ordineHeader(i, titoloCart) {
                             d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z" />
                         </svg>
                       </a></li>
-                    <li><a class="dropdown-item" href="#">Elimina
+                    <li><a class="dropdown-item cancelButton" href="#">Elimina
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-trash" viewBox="0 0 16 16">
                           <path
@@ -95,7 +95,7 @@ function ordineHeader(i, titoloCart) {
 function ricettes(i, recipe) {
   let ricetteCon = `  
      <!-- single container-->
-    <div class="card bg-white shadow-lg p-0 m-1 mb-5 bg-body rounded responsiveRecipe">
+    <div class="card bg-white shadow-lg p-0 m-1 mb-5 bg-body rounded responsiveRecipe ">
         <div class=" border border-0">
             <div class="p-1 mb-1 text-white position-absolute top-0 end-0" >
                 <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox opacity-75">
@@ -125,7 +125,7 @@ function ricettes(i, recipe) {
   for (tagd of tags.slice(0, 2)) {
     ricetteCon += `
                             <div class="pt-2 bd-highlight ">
-                            <p class=" mb-0 ms-2 ps-2 pe-2 text-white rounded" style="background-color: #1985d9; " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
+                            <p class=" mb-0 ms-2 ps-2 pe-2 text-white rounded " style="background-color: #1985d9; " id="${tagd.nome}" href="#${tagd.nome}">#${tagd.nome}</p>
                             </div>
                             ` };
   ricetteCon += `
@@ -183,7 +183,7 @@ function ricetteModal(i, recipe) {
 
   let tags = recipe.categorie;
   for (tagd of tags) {
-    ricettaModal += `<div class="pt-2 p-2   bd-highlight">
+    ricettaModal += `<div class="pt-2 p-2   bd-highlight ">
                                 <p class="p-1 mb-0 ps-2 pe-2 bg-primary text-white rounded">#${tagd.nome}</p>
                             </div>`;
   }
@@ -197,7 +197,7 @@ function ricetteModal(i, recipe) {
                     `;
   let prodotti = recipe.prodotti;
   for (prod of prodotti) {
-    ricettaModal += ` <div class="d-flex justify-content-between ms-2" style="width:100%";>
+    ricettaModal += ` <div class="d-flex justify-content-between ms-2 listItemHover" style="width:100%";>
                                     <img src="${prod.immagine}" width="40vw" height="40vh"
                                         class="p-2 bd-highlight" style="background-color: #f2f2f2;">
                                     <p class="p-2 flex-grow-1 bd-highlight">${prod.genere}</p>

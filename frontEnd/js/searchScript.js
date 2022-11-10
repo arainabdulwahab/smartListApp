@@ -39,7 +39,8 @@ let outputHTML = matches =>{
   let img;
   let gener;
   if(matches.length > 0 ){
-    let html = matches.map(match => `
+    let html = matches.map(match =>
+      `
     <div class="card card-body mb-1"  >
       <img src="${match.immagine}" width="40px" height="40px">
       <h6>${match.genere}</h6>
@@ -54,7 +55,7 @@ let outputHTML = matches =>{
   console.log('img = ' + img + '....  gener = ' + gener);
   let newValGenere;
   matchList.addEventListener('click', function(){
-    newValGenere = search.value = gener[0];
+    newValGenere = search.value = gener.slice(0,1);
    
    // console.log(gener);
     matchList.innerHTML = '';
