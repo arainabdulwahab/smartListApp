@@ -56,13 +56,14 @@ let outputHTML = matches =>{
   matchList.addEventListener('click', function(){
     newValGenere = search.value = gener[0];
    
-    console.log(gener);
+   // console.log(gener);
     matchList.innerHTML = '';
   });
   addButton.addEventListener('click', function(){
-    
+    let testDiv = document.createElement('div');
 
-    let productToAppend = `<div class="mt-1 mb-3 d-flex justify-content-between" id="itemToShow">
+    let newDiv =  '';
+    newDiv +=`<div class="mt-1 mb-3 d-flex justify-content-between" id="itemToShow">
 
       <div class=" p-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -74,7 +75,7 @@ let outputHTML = matches =>{
       </div>
 
       <div class=" p-2">
-        <img src="img/icon/almond.png" width="30px" height="30px" class="p-2 bd-highlight"
+        <img src="${img}" width="30px" height="30px" class="p-2 bd-highlight"
           style="background-color: grey;">
       </div>
 
@@ -94,8 +95,9 @@ let outputHTML = matches =>{
         <p>${prezzoInput.value}</p>
       </div>
     </div> <!-- end righa-->`;
-    //createItemToAdd.innerHTML = productToAppend;
-    createItemToAdd.append(productToAppend);
+    testDiv.innerHTML = newDiv;
+  
+    createItemToAdd.append(testDiv);
   })
 }
 search.addEventListener('keyup', () => searchStates(search.value));
