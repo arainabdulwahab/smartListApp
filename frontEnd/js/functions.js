@@ -208,7 +208,7 @@ function ricetteModal(i, recipe) {
   ricettaModal +=
     `
                 </div>
-                <h5 class="card-title p-1">Procedimento</h5>
+                <h5 class="card-title p-1 ms-2">Procedimento</h5>
 
                 <p class="card-text p-3">${recipe.procedimento}
                 </p>
