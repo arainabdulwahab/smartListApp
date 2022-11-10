@@ -318,26 +318,19 @@ function updateModalHeader(i, lista){
         </div>
       </div> <!-- end card-header -->
       
-      
-      <div class="card-body " >
-      <!-- description of items -->
-      <div class="d-flex bd-highlight border-top">
-        <div class=""></div>
-        <div class="" id="nomeProducts">
-          <p>Products </p>
-        </div>
-        <div class="" id="nomeAddedToCart">
-          <p>Added to cart</p>
-        </div>
-        <div class="" id="nomeQuantity">
-          <p>Quantity</p>
-        </div>
-        <div class="" id="nomePrice">
-          <p>Price</p>
-        </div>
-      </div><!-- end description of items -->
-      <!-- righe   to be looped -->
-      <div class="mt-1 mb-3 " >
+      <table class="table">
+      <thead>
+        <tr >
+        <th scope="col text-center" style="heigth:70px;"></th>
+        <th scope="col text-center"></th>
+        <th scope="col text-center">Products</th>
+        <th scope="col" text-center style="width:10%;">Added to cart</th>
+        <th scope="col text-center">Quantity</th>
+        <th scope="col text-center">Price</th>
+        </tr>
+        <tr></tr>
+      </thead>
+      <tbody>
       `;
 }
 /* update Modal loop item */
@@ -345,34 +338,30 @@ function updateModalHeader(i, lista){
 function updateModalProdottiLoop(item) {
 
   let items = `   
-   <div class="mt-1 mb-3 d-flex justify-content-between" id = "itemToShow" >
-    <div class=" p-2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
-      </svg>
-    </div>
-
-    <div class=" p-2">
-      <img src="${item.img}" width="30px" height="30px" class="p-2 bd-highlight" style="background-color: grey;">
-    </div>
-
-    <div class="p-2" style="width: 50rem; ">
-      <p >${item.genere} </p>
-    </div>
-
-    <div class=" bd-highlight p-2" >
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    </div>
-
-    <div class="p-2" style="width: 15rem; ">
-      <p > ${item.quantita}</p>
-    </div>
-
-    <div class="p-2">
-      <p > ${item.prezzo}</p>
-    </div>
-  </div >
+  
+    <tr id = "itemToShow" >
+      <th scope="row" class="border-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+        </svg>
+      </th>
+      <td class="border-0">
+        <img src="${item.img}" width="35px" height="35px" class="p-2 bd-highlight" style="background-color: #f2f2f2;">
+      </td>
+      <td  class="border-0" style="width:50%">
+        <p class="m-6">${item.genere} </p>
+      </td>
+      <td class="border-0">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="background-color:rgb(19, 202, 235); border:0;" checked>
+      </td>
+      <td class="border-0">
+        <p> ${item.quantita}</p>
+      </td>
+      <td class="border-0">
+        <p> ${item.prezzo}</p>
+      </td>
+    </tr>
 
     `;
     return items;
@@ -380,6 +369,8 @@ function updateModalProdottiLoop(item) {
 
 function updateModalFooter() {
   return   ` 
+  <tbody>
+  </table>
   </div>
    </div ><!--end card - body-- >
   </div ><!--end card-- >
