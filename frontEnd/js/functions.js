@@ -95,9 +95,9 @@ function ordineHeader(i, titoloCart) {
 function ricettes(i, recipe) {
   let ricetteCon = `  
      <!-- single container-->
-    <div class="card bg-white shadow-lg p-0 m-1 mb-5 bg-body rounded responsiveRecipe ">
+    <div class="card bg-white shadow-lg p-0 m-1 mb-5 bg-body rounded responsiveRecipe">
         <div class=" border border-0">
-            <div class="p-1 mb-1  text-white position-absolute top-0 end-0 " >
+            <div class="p-1 mb-1 text-white position-absolute top-0 end-0" >
                 <div class="d-flex flex-row bd-highlight mb-0 bg-dark rounded topItemBox opacity-75">
                     <div class="p-2 bd-highlight ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -132,7 +132,6 @@ function ricettes(i, recipe) {
                 </div>
                 <h5 class="p-2 card-title text-center text-truncate" data-bs-toggle="modal" style="font-size: large;"
                     data-bs-target="#staticBackdropRecipe${i}"> ${recipe.nome} </h5>
-                <!-- <p class="card-text">La pasta alla siciliana è un primo piatto super gustoso, di quelli che portano l'allegria in tavola! Nonostante il nome, la ricetta ha origini napoletane ed è definita così per la presenza delle melanzane, che richiamano la pasta alla Norma. </p> -->
             </div>
         </div>
     </div> <!-- card end -->`;
@@ -140,11 +139,12 @@ function ricettes(i, recipe) {
   return ricetteCon;
 }
 
+
+
 function ricetteModal(i, recipe) {
   let ricettaModal = `
     <!-- Modal recipe -->
-    <div class="modal fade modal-dialog-scrollable modal-lg" id="staticBackdropRecipe${i}" data-bs-backdrop="static"
-        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade modal-lg" id="staticBackdropRecipe${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" >
             <div class="modal-content">
                 <div class="modal-body m-0 p-0">
@@ -190,16 +190,14 @@ function ricetteModal(i, recipe) {
   ricettaModal += `
                     </div>
                     <h5 class="card-title p-3">${recipe.nome} </h5>
-                    <p class="card-text p-3">La pasta alla siciliana è un primo piatto super gustoso, di quelli che
-                        portano l'allegria in tavola! Nonostante il nome, la ricetta ha origini napoletane ed è
-                        definita così per la presenza delle melanzane, che richiamano la pasta alla Norma.
+                    <p class="card-text p-3">${recipe.descrizione}
                     </p>
                     <h5 class="card-title p-3">Ingredienti</h5>
                     <div class="d-flex align-content-end flex-wrap m-2">
                     `;
   let prodotti = recipe.prodotti;
   for (prod of prodotti) {
-    ricettaModal += ` <div class="d-flex justify-content-center ">
+    ricettaModal += ` <div class="d-flex justify-content-between" style="width:100%";>
                                     <img src="${prod.immagine}" width="30px" height="30px"
                                         class="p-2 bd-highlight" style="background-color: grey;">
                                     <p class="p-2 flex-grow-1 bd-highlight">${prod.genere}</p>
@@ -210,7 +208,7 @@ function ricetteModal(i, recipe) {
   ricettaModal +=
     `
                 </div>
-                <h5 class="card-title p-1">Procedimenti </h5>
+                <h5 class="card-title p-1">Procedimento</h5>
 
                 <p class="card-text p-3">${recipe.procedimento}
                 </p>
