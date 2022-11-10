@@ -317,26 +317,28 @@ function updateModalHeader(i, lista){
           </ul>
         </div>
       </div> <!-- end card-header -->
+      
+      
       <div class="card-body " >
-        <!-- description of items -->
-        <div class="d-flex bd-highlight border-top">
-          <div class=" flex-grow-1 bd-highlight"></div>
-          <div class=" ps-4 pe-4 flex-grow-1 bd-highlight">
-            <p>Products </p>
-          </div>
-          <div class="ps-2 mb-0 bd-highlight" style="width: 10%;">
-            <p>Added to cart</p>
-          </div>
-          <div class="ps-2 bd-highlight">
-            <p>Quantity</p>
-          </div>
-          <div class="ps-4 bd-highlight">
-            <p>Price</p>
-          </div>
-        </div><!-- end description of items -->
-        <!-- righe   to be looped -->
-        <div class="mt-1 mb-3 " >
-        `;
+      <!-- description of items -->
+      <div class="d-flex bd-highlight border-top">
+        <div class=""></div>
+        <div class="" id="nomeProducts">
+          <p>Products </p>
+        </div>
+        <div class="" id="nomeAddedToCart">
+          <p>Added to cart</p>
+        </div>
+        <div class="" id="nomeQuantity">
+          <p>Quantity</p>
+        </div>
+        <div class="" id="nomePrice">
+          <p>Price</p>
+        </div>
+      </div><!-- end description of items -->
+      <!-- righe   to be looped -->
+      <div class="mt-1 mb-3 " >
+      `;
 }
 /* update Modal loop item */
 
@@ -390,7 +392,7 @@ function updateModalFooter() {
           <button type="button" class="btn btn-success " id="addButton">Add +</button>
         </div>
         <div class="p-2 bd-highlight">Total price: </div>
-        <div class="p-2 bd-highlight"><span>50</span><span>£</span></div>
+        <div class="p-2 bd-highlight"><span>16,50</span><span>€</span></div>
       </div><!-- end  bottom of list add button and show total price -->
     </div>
 </div >

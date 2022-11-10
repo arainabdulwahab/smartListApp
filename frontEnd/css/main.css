@@ -24,6 +24,19 @@ body {
   width: 80%;
 }
 
+#nomeQuantity {
+  padding-left: 2vh;
+}
+
+#nomePrice {
+  margin-right: 0vh;
+  padding-left: 6vh;
+}
+
+#nomeAddedToCart {
+  margin-left: 60vh;
+}
+
 .responsiveRecipe {
   width: 20rem;
   height: 80%;
