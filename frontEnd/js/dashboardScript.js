@@ -129,18 +129,35 @@ let showUser = document.getElementById('showUser');
 let ShowWallp = document.getElementById('ShowWallp');
 
 showAllUserBtn.addEventListener('click', function(){
+  ShowWallp.innerHTML = '';
     showProdotti.style.display = 'none';
     ShowWallp.style.display = 'none';
     showCreateRecipe.style.display = 'none';
-    showAllUserBtn.style.display = 'block';
+    showUser.style.display = 'block';
 });
 
 
-showProductBtn.addEventListener('click', function(e){
-  e.preventDefault();
+showProductBtn.addEventListener('click', function(){
+  ShowWallp.innerHTML = '';
   showProdotti.style.display = 'block';
+  ShowWallp.style.display = 'none';
+  showCreateRecipe.style.display = 'none';
   showUser.style.display = 'none';
 
 });
 
+showWallpaperBtn.addEventListener('click', function(){
+  showProdotti.style.display = 'none';
+  ShowWallp.style.display = 'block';
+  showCreateRecipe.style.display = 'none';
+  showUser.style.display = 'none';
+  
+});
 
+createRecipeBtn.addEventListener('click', function(){
+  ShowWallp.innerHTML = '';
+  showProdotti.style.display = 'none';
+  ShowWallp.style.display = 'none';
+  showCreateRecipe.style.display = 'block';
+  showUser.style.display = 'none';
+});
