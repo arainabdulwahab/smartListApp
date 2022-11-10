@@ -80,9 +80,10 @@ body {
 }
 .dashActive:hover{ 
   box-shadow:  0 0 5px 1px rgba(20, 239, 151, 0.507);
-
 }
-  
+.wallImgHover:hover{
+  box-shadow:  0 0 5px 5px rgba(20, 217, 239, 0.507);
+}
 #wrapper {
   width:500px;
   margin:0 auto;

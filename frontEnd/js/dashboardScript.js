@@ -86,7 +86,7 @@ function ShowUser(i, singleUser){
     return `
     
     <tr>
-      <th scope="row">${i}</th>
+      <th scope="row wallImgHover">${i}</th>
       <td>${singleUser.cognome}</td>
       <td>${singleUser.nome}</td>
       <td>${singleUser.email}</td>
@@ -98,7 +98,7 @@ function ShowWallpaper(singleWall){
     
     <div class="col">
       <div class="card border-0 text-center" style="width: 10rem; ">
-          <img src="${singleWall.uri}" class="card-img-top" alt="..." width="90px" height="120px">
+          <img src="${singleWall.uri}" class="card-img-top  wallImgHover" alt="..." width="90px" height="120px">
       </div>
     </div>
   `;
@@ -109,8 +109,8 @@ function prodottiShow(singoloProdotto) {
     return `
     
   <div class="col">
-    <div class="card border-0 text-center" style="width: 10rem; ">
-        <img src="${singoloProdotto.immagine}" class="card-img-top" alt="..." width="90px" height="120px">
+    <div class="card border-0 text-center p-2 wallImgHover" style="width: 10rem; ">
+        <img src="${singoloProdotto.immagine}" class="card-img-top " alt="..." width="90px" height="120px">
         <div class="card-body">
             <h5 class="card-title">${singoloProdotto.genere}</h5>
         </div>
