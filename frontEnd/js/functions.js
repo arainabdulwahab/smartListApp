@@ -213,7 +213,7 @@ function ricetteModal(i, recipe) {
                 <p class="card-text p-3">${recipe.procedimento}
                 </p>
                 <div class="position-absolute bottom-0 end-0 ">
-                    <button type="button" class="btn btn-success " onclick"importRicetta(${i})">import ↓</button>
+                    <button type="button" class="btn btn-success mb-2 me-2" onclick"importRicetta(${i})">import ↓</button>
                 </div>
             </div>
         </div>
