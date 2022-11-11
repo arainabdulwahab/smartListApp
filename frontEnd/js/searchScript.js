@@ -65,7 +65,7 @@ let outputHTML = matches =>{
   addButton.addEventListener('click', function(){
     totalPrice.value = prezzoInput.value;
     let testDiv = document.createElement('tr');
-    testDiv.id =id="itemToShow";
+    //testDiv.id =id="itemToShow";
     let newDiv =  '';
 
     
