@@ -63,6 +63,7 @@ let outputHTML = matches =>{
     matchList.innerHTML = '';
   });
   addButton.addEventListener('click', function(){
+    totalPrice.value = prezzoInput.value;
     let testDiv = document.createElement('tr');
     testDiv.id =id="itemToShow";
     let newDiv =  '';
@@ -98,9 +99,8 @@ let outputHTML = matches =>{
   </tr>`;
     testDiv.innerHTML = newDiv;
   
-  totalPrice.value = prezzoInput.value;
     createItemToAdd.append(testDiv);
-  })
+  });
 }
 
 search.addEventListener('keyup', () => searchStates(search.value));
